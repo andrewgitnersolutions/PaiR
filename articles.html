@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | PaiR — Pro AI Results</title>
+    <meta name="description" content="Insights and articles on evidence-based AI integration from PaiR.">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-pa">Pa</span><span class="logo-i">i</span><span class="logo-r">R</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="articles.html" class="nav-link active">Articles</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="contact.html" class="btn btn--primary btn--sm">Work With Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__inner">
+                    <h1>Insights &amp; Articles</h1>
+                    <p>The latest research, strategic thinking, and practical guidance on AI integration from the PaiR
+                        team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <div class="article-card__img">Strategy</div>
+                        <div class="article-card__body">
+                            <div class="article-card__meta"><span>Strategy</span><span>5 min read</span></div>
+                            <h3 class="article-card__title">Moving Beyond the AI Hype Cycle</h3>
+                            <p>How organizations can shift from pilot purgatory to measurable enterprise value using
+                                evidence-based metrics.</p>
+                            <a href="#" class="article-card__link">Read Full Article</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-card__img">Culture</div>
+                        <div class="article-card__body">
+                            <div class="article-card__meta"><span>Culture</span><span>8 min read</span></div>
+                            <h3 class="article-card__title">The Cross-Disciplinary AI Team</h3>
+                            <p>Why your data science team needs behavioral psychologists and operations experts to
+                                succeed.</p>
+                            <a href="#" class="article-card__link">Read Full Article</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-card__img">Measurement</div>
+                        <div class="article-card__body">
+                            <div class="article-card__meta"><span>Measurement</span><span>6 min read</span></div>
+                            <h3 class="article-card__title">Quantifying AI Readiness</h3>
+                            <p>A comprehensive framework for evaluating your organization's capability to deploy and
+                                scale AI solutions.</p>
+                            <a href="#" class="article-card__link">Read Full Article</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-card__img">Policy</div>
+                        <div class="article-card__body">
+                            <div class="article-card__meta"><span>Governance</span><span>7 min read</span></div>
+                            <h3 class="article-card__title">Crafting an AI Use Policy That Works</h3>
+                            <p>Practical guidance on writing governance documents that protect your organization without
+                                stifling innovation.</p>
+                            <a href="#" class="article-card__link">Read Full Article</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-card__img">Operations</div>
+                        <div class="article-card__body">
+                            <div class="article-card__meta"><span>Operations</span><span>4 min read</span></div>
+                            <h3 class="article-card__title">From Proof-of-Concept to Production</h3>
+                            <p>The operational gaps that kill AI projects after the demo — and how to close them before
+                                you start.</p>
+                            <a href="#" class="article-card__link">Read Full Article</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-card__img">Leadership</div>
+                        <div class="article-card__body">
+                            <div class="article-card__meta"><span>Leadership</span><span>5 min read</span></div>
+                            <h3 class="article-card__title">Leading Through the AI Transition</h3>
+                            <p>What executives need to know about managing teams, expectations, and timelines during AI
+                                adoption.</p>
+                            <a href="#" class="article-card__link">Read Full Article</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work With Us Form -->
+        <section class="section section--alt" id="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <h2>Start the Conversation</h2>
+                    <p>Interested in AI integration consulting? Send us a note and let's find the signal in the noise.
+                    </p>
+                    <form id="contactForm" action="https://formspree.io/f/xbdzjzba" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First name</label>
+                                <input type="text" id="firstName" name="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last name</label>
+                                <input type="text" id="lastName" name="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Work Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I am interested in...</label>
+                            <select id="interest" name="interest" class="form-control">
+                                <option value="ai-readiness">AI Readiness Audit</option>
+                                <option value="workshop">Workshop or Training</option>
+                                <option value="strategic-consulting">Strategic Consulting</option>
+                                <option value="speaking">Speaking Engagement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-pa">Pa</span><span class="logo-i">i</span><span class="logo-r">R</span>
+            </a>
+            <p>Professional AI Results</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 PaiR — Pro AI Results. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
