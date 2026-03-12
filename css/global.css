@@ -145,17 +145,6 @@ p {
   color: inherit;
 }
 
-.logo-pa {
-  color: var(--navy);
-}
-
-.logo-i {
-  color: var(--crimson);
-}
-
-.logo-r {
-  color: var(--navy);
-}
 
 /* ==== Header ==== */
 .site-header {
@@ -519,14 +508,6 @@ textarea.form-control {
   justify-content: center;
 }
 
-.site-footer .logo-pa,
-.site-footer .logo-r {
-  color: var(--white);
-}
-
-.site-footer .logo-i {
-  color: var(--crimson);
-}
 
 .site-footer p {
   font-size: 0.875rem;
