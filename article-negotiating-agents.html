@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)file:///C:/Users/donpe/PaiR/Blog%20Articles/lying-mirror-pair.html#schools -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lying Mirror | AI Cognitive Biases — RaiseMark</title>
+<link href="./The Lying Mirror _ AI Cognitive Biases — PaiR v2_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B3A6B;
+    --navy-deep: #0f2448;
+    --navy-mid: #2c5499;
+    --navy-light: #e8eef8;
+    --navy-pale: #f2f5fb;
+    --crimson: #B22234;
+    --crimson-bright: #cc2a3f;
+    --crimson-pale: #fdf0f2;
+    --white: #ffffff;
+    --off-white: #f8f9fc;
+    --border: #d0daea;
+    --border-dark: #b0bdd4;
+    --text: #141e30;
+    --text-mid: #2d3f60;
+    --text-soft: #5a6d8a;
+    --sidebar-width: 240px;
+    --content-max: 740px;
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--off-white);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.78;
+    font-weight: 400;
+  }
+
+  /* ─── Top Bar / Masthead ───────────────────── */
+  .masthead {
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--crimson);
+    padding: 0 24px;
+  }
+
+  .masthead-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .masthead-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  /* Inline SVG logo recreation */
+  .logo-svg-wrap {
+    height: 38px;
+    display: flex;
+    align-items: center;
+  }
+
+  .masthead-tagline {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    border-left: 1px solid rgba(255,255,255,0.15);
+    padding-left: 14px;
+  }
+
+  .masthead-section {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* ─── Layout ─────────────────────────────── */
+  .page-wrap {
+    display: flex;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    gap: 52px;
+    align-items: flex-start;
+  }
+
+  .main-col {
+    flex: 1;
+    min-width: 0;
+    max-width: var(--content-max);
+  }
+
+  /* ─── Sidebar ────────────────────────────── */
+  .sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    position: sticky;
+    top: 32px;
+  }
+
+  .sidebar-inner {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy);
+    box-shadow: 0 2px 12px rgba(27,58,107,0.07);
+  }
+
+  .sidebar-header {
+    background: var(--navy);
+    padding: 10px 16px;
+  }
+
+  .sidebar-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    display: block;
+  }
+
+  .sidebar-logo-small {
+    margin-top: 4px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.03em;
+  }
+
+  .sidebar-logo-small span { color: var(--crimson); }
+
+  .sidebar nav { padding: 8px 0; }
+
+  .sidebar nav a {
+    display: block;
+    color: var(--text-mid);
+    text-decoration: none;
+    padding: 7px 16px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    transition: all 0.15s;
+    font-family: var(--sans);
+    font-weight: 400;
+    border-left: 3px solid transparent;
+  }
+
+  .sidebar nav a:hover {
+    color: var(--navy);
+    background: var(--navy-pale);
+    border-left-color: var(--navy-mid);
+  }
+
+  .sidebar nav a.active {
+    color: var(--crimson);
+    background: var(--crimson-pale);
+    border-left-color: var(--crimson);
+    font-weight: 600;
+  }
+
+  .sidebar nav a.sub {
+    padding-left: 28px;
+    font-size: 11.5px;
+    color: var(--text-soft);
+  }
+
+  .sidebar nav a.sub:hover { color: var(--navy); }
+  .sidebar nav a.sub.active { color: var(--crimson); }
+
+  .sidebar-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 16px;
+  }
+
+  /* ─── Article Header ─────────────────────── */
+  .article-header {
+    margin-bottom: 44px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--navy);
+  }
+
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--crimson);
+    padding: 4px 10px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy-deep);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--crimson);
+  }
+
+  .subtitle {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: var(--text-soft);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+
+  .byline-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--crimson);
+    display: inline-block;
+  }
+
+  /* ─── Body Typography ────────────────────── */
+  .main-col p {
+    margin-bottom: 1.3em;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .main-col section:first-of-type p:first-of-type::first-letter {
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.78;
+    margin: 6px 8px -4px 0;
+    color: var(--navy);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin: 2.8em 0 0.65em;
+    line-height: 1.2;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy-mid);
+    margin: 2em 0 0.6em;
+  }
+
+  strong { font-weight: 700; color: var(--navy-deep); }
+  em { font-style: italic; }
+
+  a { color: var(--crimson); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--crimson-bright); }
+
+  /* ─── Pullquote ──────────────────────────── */
+  .pullquote {
+    border-left: 4px solid var(--crimson);
+    padding: 16px 20px;
+    margin: 2em 0;
+    background: var(--navy-pale);
+    border-right: 1px solid var(--border);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--navy-deep);
+    line-height: 1.6;
+  }
+
+  /* ─── Research Box ───────────────────────── */
+  .research-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy);
+    padding: 18px 20px;
+    margin: 2em 0;
+    box-shadow: 0 1px 8px rgba(27,58,107,0.06);
+  }
+
+  .research-box .rb-label {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .research-box .rb-label::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 3px;
+    background: var(--crimson);
+    border-radius: 2px;
+  }
+
+  .research-box p {
+    margin-bottom: 0.5em;
+    font-size: 0.88rem;
+    color: var(--text-mid);
+  }
+
+  .research-box p:last-child { margin-bottom: 0; }
+
+  /* ─── Caution ────────────────────────────── */
+  .caution {
+    background: #fffbf0;
+    border-left: 3px solid #c8960a;
+    border: 1px solid #e8d49a;
+    border-left: 3px solid #c8960a;
+    padding: 12px 16px;
+    margin: 1.5em 0;
+    font-size: 0.87rem;
+    color: #5a4400;
+    font-family: var(--sans);
+  }
+
+  .caution strong { color: #5a4400; }
+
+  /* ─── Table ──────────────────────────────── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 2em 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(27,58,107,0.06);
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-height: 1.45; }
+
+  th {
+    background: var(--navy-deep);
+    color: var(--white);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.77rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 11px 14px;
+    text-align: left;
+  }
+
+  th:first-child { border-left: 3px solid var(--crimson); }
+
+  td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-mid);
+    font-family: var(--sans);
+  }
+
+  tr:nth-child(even) td { background: var(--navy-pale); }
+  tr:hover td { background: #e4eaf5; }
+
+  /* ─── Footnote marks ─────────────────────── */
+  .footnote-mark {
+    font-size: 0.7rem;
+    vertical-align: super;
+    line-height: 0;
+    color: var(--crimson);
+    font-family: var(--sans);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .footnote-mark:hover { color: var(--navy); }
+
+  /* ─── Footnotes Section ──────────────────── */
+  .footnotes-section {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+    font-size: 0.83rem;
+    color: var(--text-mid);
+    font-family: var(--sans);
+  }
+
+  .footnotes-section h2 {
+    font-size: 0.8rem;
+    border-bottom: none;
+    margin: 0 0 16px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    padding: 0;
+  }
+
+  .footnotes-section ol { padding-left: 20px; }
+  .footnotes-section li { margin-bottom: 8px; line-height: 1.55; }
+  .footnotes-section a { font-size: 0.8rem; word-break: break-all; }
+
+  /* ─── Methodology Tag ────────────────────── */
+  .methodology-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 48px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--navy);
+    padding: 7px 14px;
+  }
+
+  .methodology-tag::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--crimson);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* ─── Responsive ─────────────────────────── */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .page-wrap { padding: 36px 18px 60px; }
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 15.5px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+  }
+
+  .section-anchor { scroll-margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<!-- ─── MASTHEAD ─── -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="masthead-logo">
+        <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 38px; width: auto;">
+        <span class="masthead-tagline">A Higher Standard</span>
+      </a>
+    <span class="masthead-section">Research &amp; Analysis</span>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+  <!-- ─── SIDEBAR ─── -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-header">
+        <span class="sidebar-label">In This Article</span>
+        <div class="sidebar-logo-small">RaiseMark</div>
+      </div>
+            <nav id="toc">
+        <a href="#summary" class="toc-link active">Introduction</a>
+        <div class="sidebar-divider"></div>
+        <a href="#right-tool" class="toc-link">The Right Tool for the Right Job</a>
+        <div class="sidebar-divider"></div>
+        <a href="#mit-tournament" class="toc-link">The MIT AI Tournament</a>
+        <div class="sidebar-divider"></div>
+        <a href="#lessons" class="toc-link">Lessons from the Tournament</a>
+        <div class="sidebar-divider"></div>
+        <a href="#winning-prompt" class="toc-link">How to Make a Winning CoT Prompt</a>
+        <div class="sidebar-divider"></div>
+        <a href="#misnomer" class="toc-link">Is Chain of Thinking a Misnomer?</a>
+        <div class="sidebar-divider"></div>
+        <a href="#sources" class="toc-link">Sources</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN CONTENT ─── -->
+  <article class="main-col">
+
+        <header class="article-header">
+      <div class="kicker">Research &amp; Analysis</div>
+      <h1>AI Negotiating Agents</h1>
+      <p class="subtitle">The Surprising Power of Chain-of-Thought Prompting</p>
+      <div class="byline">
+        March 2026
+        <span class="byline-dot"></span>
+        Research-based analysis
+        <span class="byline-dot"></span>
+        RaiseMark — A Higher Standard
+      </div>
+    </header>
+
+        <!-- SUMMARY -->
+    <section id="summary" class="section-anchor">
+      <p>If you have used ChatGPT, Gemini, or Claude to write an email or summarize a document, you probably used a simple “zero-shot” prompt – that is, giving the system a straightforward instruction and receiving an immediate response.  This is like asking a question to a bright intern who blurts out the first answer that comes to mind. It’s fast and often useful for simple tasks, but for complex problems, a better approach is “Chain-of-Thought” (CoT) prompting. First introduced in a 2022 Google Brain paper, this technique instructs the AI to break down its reasoning step-by-step <em>before</em> delivering its final answer. Wei, J., et al. (2022). That paper found the approach "significantly improves the ability of large language models to perform complex reasoning".</p>  
+      <p>In the intervening years, some of the frontier models have automatically begun employing a version of this step-by-step thinking under the hood, often called "Large Reasoning Models" or LRMs, as distinguished from standard "Large Language Models" or LLMs. A 2025 Wharton paper analyzed whether CoT prompting remains valuable if you use it on an LRM model that is already doing intermediate reasoning steps on its own. Meincke, L., et al. (2025). The short answer was “no.” They found there was little benefit from CoT when using LRMs, probably because they are automatically incorporating something akin to CoT in the background.</p>
+    </section>
+
+    <!-- RIGHT TOOL -->
+    <section id="right-tool" class="section-anchor">
+      <h2>The Right Tool for the Right Job</h2>
+      <p>It is important to choose the right tool for a given job.  CoT (and LRMs) work best on tasks of a certain medium complexity.  Apple recently published a paper by Parshin Shojaee and others about the “illusion of thinking”, examining LRMs on issues of increasing complexity, including brain-teaser type logic puzzles. Shojaee, P., et al. (2025). It noted that these LRMs employ a form of CoT in an effort to outperform LLMs on more complex tasks. Their testing showed that there are “low-complexity tasks where standard models surprisingly outperform LRMs.” This suggests that for low-complexity tasks it is best to use an LLM without employing a CoT approach. As the problems got more complex, the LRMs did better than LLMs. But beyond a certain level of complexity, both LLMs and LRMs “collapse” and fail to function. Thus, there is a Goldilocks middle zone where CoT and LRMs work at their best.</p>
+      <p>The Apple paper noted one counter-intuitive result that is important to keep in mind as we attempt to better understand these models. One of the puzzles researchers presented was the “Tower of Hanoi” which involves three posts and rings of various sizes that can be moved from one peg to the other, under the constraint that a larger ring can never go on top of a smaller one. The researchers found, counterintuitively, that even when they provided the models with the solution algorithm for the puzzle, "their performance on this puzzle did not improve," leading researchers to conclude "the models struggle with precise calculation." At least for now, LLMs and LRMs are not the right tool for heavy numerical calculations, regardless of the method of prompting.</p>
+    </section>
+
+    <!-- MIT TOURNAMENT -->
+    <section id="mit-tournament" class="section-anchor">
+      <h2>The MIT AI Tournament</h2>
+      <p>Despite these limitations on precise calculation, the 2025 International AI Negotiation Competition provided a massive laboratory to test AI agents prompted to negotiate with other AI agents with the goal of obtaining a numerical advantage from the negotiations. Participants included 286 AI agents from over 40 countries. Vaccaro, et al., (2026). The standout performer of the tournament was an agent named NegoMate. NegoMate did not just react to offers; it utilized a sophisticated CoT structure that was hidden from its counterparts using XML tags (like <negotiation_preparation>). Before it output any message, in the background the agent conducted a full SWOT analysis (evaluating Strengths, Weaknesses, Opportunities and Threats), quantified the importance of various deal features on a scale of 1-10, and evaluated multiple potential strategies through a decision matrix.</p>
+      <p>One interesting side-note: some of the AI agents used dirty tricks like "prompt injection" in an effort to force the opponent AI to reveal its secret strategies. It is somewhat encouraging that none of the AI agents using such approaches prevailed. This is reminiscent of the on-line prisoner’s dilemma tournaments held by Robert Axelrod finding that variations on the "tit-for-tat" strategy (which begins as cooperative but then mirrors aggression) prevailed over strategies that were preemptively aggressive. Player, N. (2023).</p>
+    </section>
+
+    <!-- LESSONS -->
+    <section id="lessons" class="section-anchor">
+      <h2>Lessons from the Tournament</h2>
+      <p>The tournament highlighted a tension between warmth and dominance. Aggressive dominant AI agents did better on the deals that were reached, but had many more standoffs than other agents. Agents using a warmer approach did not make as much on each deal, but closed a higher percentage of potential deals. The winning AI agent, NegoMate, effectively balanced these competing considerations. It achieved the highest individual points in integrative bargaining while maintaining such a positive "personality" that it fostered the second-highest level of counterpart satisfaction in the entire competition.</p>
+      <p>CoT was an important part of NegoMate’s success. The paper concluded that CoT allowed the agent to "execute exhaustive, multi-dimensional analyses with remarkable consistency across hundreds of negotiations without the cognitive limitations, bounded rationality, or time constraints that limit human preparation."</p>
+    </section>
+
+    <!-- WINNING PROMPT -->
+    <section id="winning-prompt" class="section-anchor">
+      <h2>How to Make a Winning CoT Prompt</h2>
+      <p>The easiest way to gain the advantages of CoT is to use a Large Reasoning Model, because they automatically run a version of CoT in the background. Unfortunately, LRMs are more expensive to use than an LLM. If you use an LLM, here is a step-by-step guide to making a winning CoT prompt:</p>
+      <ol>
+        <li><strong>Establish the "Clean Slate":</strong> Begin by instructing the model to ignore its prior training biases. The MIT researchers used a specific directive: "Pretend that you have never learned anything about negotiation... determine ALL of your behaviors, strategies, and personas based on the following advice". This is a good idea, however, only if you provide good instructions on how the model should proceed instead of its prior training.</li>
+        <li><strong>Intermediate Steps:</strong> Direct the model to break the problem down into intermediate steps and to think about each one separately. If there is a series of steps you know to be optimum, describe those steps in the prompt. Tell the LLM to outline its process of tackling each narrow step before proceeding to resolve it.</li>
+        <li><strong>Examples of Output:</strong> If individual steps, or the final result, need to be in a particular form, provide an example.</li>
+        <li><strong>Create a Decision Matrix:</strong> If you are asking the model to help you make a decision, develop a decision matrix to help with the analysis. Ask the model to brainstorm at least three different approaches to the problem and evaluate them on the matrix to select the optimal one.</li>
+        <li><strong>Finalize the Strategy and Double-Check Before Speaking:</strong> Prompt the model to finalize its thinking and recommendation before it presents it to you, to double-check its work, and then to lay out the reasons for its output in a logical way with references to sources (including the decision matrix, if appropriate).</li>
+      </ol>
+    </section>
+    
+    <!-- MISNOMER -->
+    <section id="misnomer" class="section-anchor">
+      <h2>Is Chain of Thinking a Misnomer?</h2>
+      <p>The Apple piece by the Shojaee team described SLMs as creating the "illusion" of thinking. They stated "[o]ur findings reveal fundamental limitations in current models: despite sophisticated self-reflection mechanisms, these models fail to develop generalizable reasoning capabilities beyond certain complexity thresholds." Indeed, they are somewhat skeptical about such models reaching anything fairly described as thinking, stating that their findings "challenge prevailing assumptions about LRM capabilities and suggest that current approaches may be encountering fundamental barriers to generalizable reasoning."</p>
+      <p>Whatever is really going on inside those models, and regardless of the potential "thought" misnomer, the AI negotiation tournament research illustrated that CoT is a useful strategy to get the most out of an LLM for certain kinds of middle-complexity tasks.</p>
+    </section>
+
+        <!-- FOOTNOTES -->
+    <section id="sources" class="footnotes-section section-anchor">
+      <h2>Sources</h2>
+      <ul>
+        <li>Vaccaro, M., et al. (2026). Advancing AI Negotiations: A Large-Scale Autonomous Negotiation Competition. MIT Sloan / Johns Hopkins.</li>
+        <li>Meincke, L., et al. (2025). Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting. Wharton Business School.</li>
+        <li>Shojaee, P., et al. (2025). The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity. Apple.</li>
+        <li>Wei, J., et al. (2022). Chain-of-thought prompting elicits reasoning in large language models.</li>
+        <li>Player, N., The Morality and Practicality of Tit for Tat, Virginia Tech. Philosophy, Politics and Economics Review ((2023) discussing Robert Axelrod’s on-line tournaments based on the Prisoner’s Dilemma) <a href="https://pressbooks.lib.vt.edu/pper/chapter/the-morality-and-practicality-of-tit-for-tat/">https://pressbooks.lib.vt.edu/pper/chapter/the-morality-and-practicality-of-tit-for-tat/</a></li>
+      </ul>
+    </section>
+
+    
+
+  </article>
+
+</div>
+
+<script>
+  const links = document.querySelectorAll('.toc-link');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const id = '#' + entry.target.id;
+        const active = document.querySelector(`.toc-link[href="${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+
+</body></html>
