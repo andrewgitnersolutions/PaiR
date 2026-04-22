@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0074)file:///C:/Users/donpe/PaiR/Blog%20Articles/lying-mirror-pair.html#schools -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Lying Mirror | AI Cognitive Biases — RaiseMark</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-<link href="./The Lying Mirror _ AI Cognitive Biases — PaiR v2_files/css2" rel="stylesheet">
+<title>Chain-Of-Thought Prompting | RaiseMark</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #1B3A6B;
@@ -507,7 +506,9 @@
         <div class="sidebar-logo-small">RaiseMark</div>
       </div>
             <nav id="toc">
-        <a href="#summary" class="toc-link active">Introduction</a>
+        <a href="#summary" class="toc-link">Introduction</a>
+        <div class="sidebar-divider"></div>
+        <a href="#what-is-cot" class="toc-link">What is CoT Prompting?</a>
         <div class="sidebar-divider"></div>
         <a href="#right-tool" class="toc-link">The Right Tool for the Right Job</a>
         <div class="sidebar-divider"></div>
@@ -545,10 +546,29 @@
       <img src="assets/negotiating-agents.jpg" alt="Negotiating Agents Illustration" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     </div>
 
-        <!-- SUMMARY -->
+    <!-- QUOTE SECTION -->
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
+      <blockquote style="font-style: italic; color: #2c5499; border-left: 4px solid #B22234; padding-left: 2rem; margin: 2rem 0; font-size: 1.1rem; line-height: 1.6;">
+        "The understanding, like the eye, whilst it makes us see and perceive all other things, takes no notice of itself; and it requires art and pains to set it at a distance, and make it its own object."
+        <footer style="margin-top: 1rem; font-style: normal; font-weight: 600; color: #0f2448;">--- John Locke, An Essay Concerning Human Understanding.</footer>
+      </blockquote>
+    </div>
+
+    <!-- SUMMARY / INTRO -->
     <section id="summary" class="section-anchor">
-      <p>If you have used ChatGPT, Gemini, or Claude to write an email or summarize a document, you probably used a simple “zero-shot” prompt – that is, giving the system a straightforward instruction and receiving an immediate response.  This is like asking a question to a bright intern who blurts out the first answer that comes to mind. It’s fast and often useful for simple tasks, but for complex problems, a better approach is “Chain-of-Thought” (CoT) prompting. First introduced in a 2022 Google Brain paper, this technique instructs the AI to break down its reasoning step-by-step <em>before</em> delivering its final answer. Wei, J., et al. (2022). That paper found the approach "significantly improves the ability of large language models to perform complex reasoning".</p>  
+      <p>The realization that I have a mind of my own, with beliefs, goals, and desires—and that others possess their own unique internal landscapes—is an essential feature of what it means to be human. Successful interaction requires us to attempt to understand the beliefs, goals, and desires of others. Researchers call reflection on one’s own thinking “metacognition” and the understanding of the beliefs, goals, and desires of others “theory of mind.” Some call this whole process “social metacognition.” Scarampi, (2021).</p>
+      
+      <p>A recent study of AI agents playing a negotiation game provides insights into these deep philosophical questions, while offering some surprisingly practical insights on how to best prompt a Large Language Model (LLM). In January 2026, Michelle Vaccaro and researchers at MIT and Johns Hopkins published findings from an international competition pitting autonomous AI agents against each other in more than 180,000 negotiations. The article, <em>Advancing AI Negotiations: A Large-Scale Autonomous Negotiation Competition</em>, draws fascinating lessons from this digital tournament.</p>
+      
+      <p>Several negotiation strategies that work well with people, such as employing “warm” language, served AI agents well too. The true standout, however, was the prompting method that worked best: Chain-of-Thought prompting (CoT).</p>
+    </section>
+
+    <!-- WHAT IS COT -->
+    <section id="what-is-cot" class="section-anchor">
+      <h2>What is Chain-of-Thought Prompting?</h2>
+      <p>At its core, CoT prompting is a method designed to elicit multi-step reasoning from Large Language Models (LLMs). Rather than asking a model to provide an immediate answer to a complex problem, CoT instructs the model to proceed “step-by-step” before generating an output. Wei, et al. (2022). Researchers in 2025 tested CoT across many different LLM models, finding “[a]cross all non-reasoning models tested, employing a ‘Step-by-Step’ (CoT) prompt generally led to an improvement in the ‘Average rating’ compared to the ‘Direct’ prompt across all models.” Meincke, L., et al. (2025).</p>
       <p>In the intervening years, some of the frontier models have automatically begun employing a version of this step-by-step thinking under the hood, often called "Large Reasoning Models" or LRMs, as distinguished from standard "Large Language Models" or LLMs. A 2025 Wharton paper analyzed whether CoT prompting remains valuable if you use it on an LRM model that is already doing intermediate reasoning steps on its own. Meincke, L., et al. (2025). The short answer was “no.” They found there was little benefit from CoT when using LRMs, probably because they are automatically incorporating something akin to CoT in the background.</p>
+      <p>Importantly, a new class of LLMs has emerged specifically designed for reasoning tasks—Large Reasoning Models (LRMs) such as OpenAI’s o1/o3, DeepSeek-R1, Claude 3.7 Sonnet Thinking, and Gemini Thinking. These models are new artifacts, characterized by their “thinking” mechanisms such as long Chain-of-Thought (CoT) with self-reflection, and have demonstrated promising results across various reasoning benchmarks.</p>
     </section>
 
     <!-- RIGHT TOOL -->
