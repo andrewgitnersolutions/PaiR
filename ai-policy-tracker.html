@@ -149,7 +149,7 @@
     <script>
     const DATA=[
     {abbr:"AL",state:"Alabama",status:"Guidance",deadline:"Voluntary",req:"ALSDE AI Policy Template for LEAs (8 pillars); districts encouraged to adopt & customize.",urg:"Med"},
-    {abbr:"AK",state:"Alaska",status:"Emerging",deadline:"—",req:"No statewide mandate or published DOE guidance confirmed; monitor.",urg:"Low"},
+    {abbr:"AK",state:"Alaska",status:"Guidance",deadline:"Voluntary (Oct 2025)",req:"Alaska K-12 AI Framework (State Board of Education, Oct 2025); guidance for districts.",urg:"Low"},
     {abbr:"AZ",state:"Arizona",status:"Emerging",deadline:"—",req:"No statewide mandate; district-led policies; legislation/guidance limited.",urg:"Low"},
     {abbr:"AR",state:"Arkansas",status:"Emerging",deadline:"—",req:"State AI initiatives growing; no district-policy mandate confirmed.",urg:"Low"},
     {abbr:"CA",state:"California",status:"Guidance",deadline:"Voluntary + privacy law",req:"CDE 'Learning With AI' guidance (non-binding). AB 1159 strengthens student-data privacy & bars training AI on student data.",urg:"Med"},
@@ -201,7 +201,7 @@
     ];
     const URG={High:3,Med:2,Low:1};
     const BP="https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education";
-    const LINKS={AL:BP+"#Alabama",CA:BP+"#California",CO:BP+"#Colorado",CT:BP+"#Connecticut",DE:BP+"#Delaware",GA:BP+"#Georgia",HI:BP+"#Hawaii",IL:"https://www.aiforeducation.io/ai-resources/state-ai-guidance",IN:BP+"#Indiana",KY:BP+"#Kentucky",LA:BP+"#Louisiana",ME:BP+"#Maine",MD:"https://marylandpublicschools.org/stateboard/documents/2026/0224/artificial-intelligence-guidance-a.pdf",MN:BP+"#Minnesota",MS:BP+"#Mississippi",MO:BP+"#Missouri",NV:BP+"#Nevada",NM:BP+"#New_Mexico",NC:BP+"#North_Carolina",ND:BP+"#North_Dakota",OH:"https://education.ohio.gov/Topics/AI-in-Ohio-s-Education/Model-Policy",OK:BP+"#Oklahoma",OR:BP+"#Oregon",TN:"https://tnscore.org/resources/tennessee-opportunity-for-ai-in-education",UT:BP+"#Utah",VT:"https://www.aiforeducation.io/ai-resources/state-ai-guidance",VA:BP+"#Virginia",WA:BP+"#Washington",WV:BP+"#West_Virginia",WI:BP+"#Wisconsin",WY:BP+"#Wyoming"};
+    const LINKS={AL:BP+"#Alabama",AK:"https://education.alaska.gov/State_Board/october-2025/9.1_Alaska%20K12%20AI%20Framework_final_v2.pdf",CA:BP+"#California",CO:BP+"#Colorado",CT:"https://portal.ct.gov/das/ctedtech/commission-for-educational-technology/initiatives/artificial-intelligence?language=en_US",DE:BP+"#Delaware",GA:BP+"#Georgia",HI:BP+"#Hawaii",IL:"https://www.aiforeducation.io/ai-resources/state-ai-guidance",IN:BP+"#Indiana",KY:BP+"#Kentucky",LA:BP+"#Louisiana",ME:BP+"#Maine",MD:"https://marylandpublicschools.org/stateboard/documents/2026/0224/artificial-intelligence-guidance-a.pdf",MN:BP+"#Minnesota",MS:BP+"#Mississippi",MO:BP+"#Missouri",NV:BP+"#Nevada",NM:BP+"#New_Mexico",NC:BP+"#North_Carolina",ND:"https://www.nd.gov/dpi/policyguidelines/north-dakota-k-12-ai-guidance-framework",OH:"https://education.ohio.gov/Topics/AI-in-Ohio-s-Education/Model-Policy",OK:BP+"#Oklahoma",OR:BP+"#Oregon",TN:"https://tnscore.org/resources/tennessee-opportunity-for-ai-in-education",UT:BP+"#Utah",VT:"https://static1.squarespace.com/static/64398599b0c21f1705fb8fb3/t/69866f7bf56f56652beb60e8/1770418043581/Vermont+edu-aoe-ai-guidance-for-education.pdf",VA:BP+"#Virginia",WA:BP+"#Washington",WV:BP+"#West_Virginia",WI:BP+"#Wisconsin",WY:BP+"#Wyoming"};
     DATA.forEach(d=>{d.urgRank=URG[d.urg];});
     const tb=document.getElementById('tb');
     let filter='all',q='',sortK='urgRank',sortDesc=true;
