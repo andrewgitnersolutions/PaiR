@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-12 AI Policy Tracker | RaiseMark — A Higher Standard</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="description" content="A 50-state tracker of K-12 AI / Acceptable Use Policy legal mandates, deadlines, and requirements, from RaiseMark.">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+    /* Scoped to .rm-tracker so it cannot affect the rest of the site */
+    .rm-tracker{--t-navy:#1B3A6B;--t-midnavy:#2A5298;--t-crimson:#A8192E;--t-crimtint:#F7E8EA;--t-lgrey:#E8ECF2;--t-nwhite:#F0F2F5;--t-mgrey:#6B7280;--t-nblack:#1A1F2E;--t-rule:#CDD4E0;color:var(--t-nblack);font-size:14px;line-height:1.45;}
+    .rm-tracker .meta{color:var(--t-mgrey);font-size:12px;margin:0 0 16px;}
+    .rm-tracker .cards{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 18px;}
+    .rm-tracker .card{flex:1;min-width:150px;border:1px solid var(--t-rule);border-radius:10px;padding:12px 14px;background:var(--t-nwhite);}
+    .rm-tracker .card .n{font-size:26px;font-weight:700;color:var(--t-navy);line-height:1;}
+    .rm-tracker .card.crim .n{color:var(--t-crimson);}
+    .rm-tracker .card .l{font-size:11px;color:var(--t-mgrey);text-transform:uppercase;letter-spacing:.4px;margin-top:5px;}
+    .rm-tracker .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px;}
+    .rm-tracker .controls input{flex:1;min-width:200px;padding:9px 12px;border:1px solid var(--t-rule);border-radius:8px;font-size:14px;font-family:inherit;}
+    .rm-tracker .filters{display:flex;gap:6px;flex-wrap:wrap;}
+    .rm-tracker .fbtn{padding:7px 12px;border:1px solid var(--t-rule);background:#fff;border-radius:20px;cursor:pointer;font-size:12.5px;font-family:inherit;color:var(--t-nblack);}
+    .rm-tracker .fbtn.active{background:var(--t-navy);color:#fff;border-color:var(--t-navy);}
+    .rm-tracker table{width:100%;border-collapse:collapse;}
+    .rm-tracker th{background:var(--t-navy);color:#fff;text-align:left;padding:9px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;cursor:pointer;}
+    .rm-tracker th.sorted::after{content:" \25B4";}.rm-tracker th.sorted.desc::after{content:" \25BE";}
+    .rm-tracker td{padding:9px 10px;border-bottom:1px solid var(--t-lgrey);vertical-align:top;}
+    .rm-tracker tr:hover td{background:var(--t-nwhite);}
+    .rm-tracker .st{font-size:13px;width:42px;font-weight:700;color:var(--t-navy);}
+    .rm-tracker .badge{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11px;font-weight:700;white-space:nowrap;}
+    .rm-tracker .b-mandate{background:var(--t-crimson);color:#fff;}
+    .rm-tracker .b-guidance{background:var(--t-navy);color:#fff;}
+    .rm-tracker .b-emerging{background:var(--t-lgrey);color:var(--t-navy);}
+    .rm-tracker .urg{font-weight:700;font-size:12px;}
+    .rm-tracker .urg-high{color:var(--t-crimson);}.rm-tracker .urg-med{color:var(--t-midnavy);}.rm-tracker .urg-low{color:var(--t-mgrey);}
+    .rm-tracker .note-banner{background:var(--t-crimtint);border:1px solid var(--t-crimson);border-radius:8px;padding:10px 13px;font-size:12.5px;color:var(--t-nblack);margin-bottom:16px;}
+    .rm-tracker .foot{margin-top:20px;font-size:11.5px;color:var(--t-mgrey);}
+    .rm-tracker .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--t-mgrey);margin:6px 0 0;}
+    .rm-tracker .legend span{display:inline-flex;align-items:center;gap:5px;}
+    .rm-tracker .dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
+    .rm-tracker .tbl-wrap{overflow-x:auto;border:1px solid var(--t-rule);border-radius:10px;}
+    @media(max-width:680px){.rm-tracker .col-hide{display:none;}}
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 48px; width: auto;">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="articles.html" class="nav-link">Articles</a></li>
+                    <li><a href="contact.html" class="btn btn--primary btn--sm">Work With Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__inner">
+                    <h1>K-12 AI Policy &mdash; 50-State Legal Tracker</h1>
+                    <p>State mandates, deadlines, and requirements for district AI and Acceptable Use Policies. Updated June 2026.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="rm-tracker">
+                    <p class="meta" id="meta"></p>
+
+                    <div class="note-banner">
+                        <strong>Read before relying on this.</strong> Researched June 2026 from Ballotpedia, ExcelinEd, FutureEd, AI for Education, MultiState, and state DOE sources. <strong>Mandate states are individually verified.</strong> Guidance and emerging classifications change frequently (130+ AI-in-education bills are active across 30+ states this session) &mdash; confirm against the current state statute or DOE before acting.
+                    </div>
+
+                    <div class="cards" id="cards"></div>
+
+                    <div class="controls">
+                        <input id="search" placeholder="Search state, requirement, or deadline&hellip;" autocomplete="off">
+                        <div class="filters" id="filters">
+                            <button class="fbtn active" data-f="all">All</button>
+                            <button class="fbtn" data-f="Mandate">Mandate (law)</button>
+                            <button class="fbtn" data-f="Guidance">Guidance</button>
+                            <button class="fbtn" data-f="Emerging">Emerging / limited</button>
+                        </div>
+                    </div>
+                    <div class="legend">
+                        <span><span class="dot" style="background:#A8192E"></span> Mandate &mdash; statute requires a district AI policy</span>
+                        <span><span class="dot" style="background:#1B3A6B"></span> Guidance &mdash; voluntary state framework</span>
+                        <span><span class="dot" style="background:#E8ECF2;border:1px solid #CDD4E0"></span> Emerging &mdash; no statewide mandate; pending or limited</span>
+                    </div>
+
+                    <div class="tbl-wrap" style="margin-top:12px;">
+                    <table id="tbl">
+                        <thead><tr>
+                            <th data-k="abbr" class="st">St</th>
+                            <th data-k="state">State</th>
+                            <th data-k="status">Status</th>
+                            <th data-k="deadline">Deadline / In effect</th>
+                            <th data-k="req" class="col-hide">Key requirement</th>
+                            <th data-k="urgRank">RaiseMark urgency</th>
+                        </tr></thead>
+                        <tbody id="tb"></tbody>
+                    </table>
+                    </div>
+
+                    <p class="foot">
+                        Sources: Ohio Dept. of Education &amp; Workforce (RC 3301.24 / HB 96, model policy Jan 2026) &middot; Tennessee 2024 AI policy law &middot; Oklahoma SB 1734 (Responsible Technology in Schools Act) &middot; Maryland SB 720 (AI-Ready Schools Act) &middot; West Virginia HB 5205 &middot; Ballotpedia &ldquo;AI guidance issued by state departments of education&rdquo; &middot; ExcelinEd &ldquo;State K-12 AI Policy in 2026&rdquo; &middot; FutureEd 2026 Legislative Tracker &middot; AI for Education state guidance map. Urgency reflects engagement priority, not legal advice.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 48px; width: auto;">
+            </a>
+            <p>A Higher Standard</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="team.html">Team</a>
+                <a href="services.html">Services</a>
+                <a href="articles.html">Articles</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 RaiseMark — A Higher Standard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+    const DATA=[
+    {abbr:"AL",state:"Alabama",status:"Guidance",deadline:"Voluntary",req:"ALSDE AI Policy Template for LEAs (8 pillars); districts encouraged to adopt & customize.",urg:"Med"},
+    {abbr:"AK",state:"Alaska",status:"Emerging",deadline:"—",req:"No statewide mandate or published DOE guidance confirmed; monitor.",urg:"Low"},
+    {abbr:"AZ",state:"Arizona",status:"Emerging",deadline:"—",req:"No statewide mandate; district-led policies; legislation/guidance limited.",urg:"Low"},
+    {abbr:"AR",state:"Arkansas",status:"Emerging",deadline:"—",req:"State AI initiatives growing; no district-policy mandate confirmed.",urg:"Low"},
+    {abbr:"CA",state:"California",status:"Guidance",deadline:"Voluntary + privacy law",req:"CDE 'Learning With AI' guidance (non-binding). AB 1159 strengthens student-data privacy & bars training AI on student data.",urg:"Med"},
+    {abbr:"CO",state:"Colorado",status:"Guidance",deadline:"Voluntary",req:"Colorado Roadmap for AI in K-12 (CDE/CEI); equity & ethical-use focus.",urg:"Med"},
+    {abbr:"CT",state:"Connecticut",status:"Guidance",deadline:"Voluntary",req:"State AI guidance & resources for safe, effective integration.",urg:"Med"},
+    {abbr:"DE",state:"Delaware",status:"Guidance",deadline:"Voluntary",req:"Council on Educational Technology guidance; bias & equity emphasis.",urg:"Low"},
+    {abbr:"FL",state:"Florida",status:"Emerging",deadline:"—",req:"No statewide AUP mandate confirmed; district-led; monitor legislation.",urg:"Low"},
+    {abbr:"GA",state:"Georgia",status:"Guidance",deadline:"Voluntary",req:"Comprehensive DOE guidance incl. process for districts to adopt AI policies & handbook updates.",urg:"Med"},
+    {abbr:"HI",state:"Hawaii",status:"Guidance",deadline:"Voluntary",req:"Employee AI framework; cautions against AI-detection tools.",urg:"Low"},
+    {abbr:"ID",state:"Idaho",status:"Emerging",deadline:"—",req:"No statewide mandate or DOE guidance confirmed.",urg:"Low"},
+    {abbr:"IL",state:"Illinois",status:"Guidance",deadline:"Voluntary + privacy law",req:"State guidance emerging; SB 3735 lets families opt out of AI grading & restricts student-data use for AI training.",urg:"Med"},
+    {abbr:"IN",state:"Indiana",status:"Guidance",deadline:"Voluntary + privacy law",req:"DOE AI guidance (literacy, security, PII). New 2026 data-privacy frameworks.",urg:"Med"},
+    {abbr:"IA",state:"Iowa",status:"Emerging",deadline:"—",req:"No statewide mandate confirmed; monitor.",urg:"Low"},
+    {abbr:"KS",state:"Kansas",status:"Emerging",deadline:"—",req:"No statewide mandate or DOE guidance confirmed.",urg:"Low"},
+    {abbr:"KY",state:"Kentucky",status:"Guidance",deadline:"Voluntary",req:"DOE guidance; community engagement, monitoring & post-adoption evaluation.",urg:"Med"},
+    {abbr:"LA",state:"Louisiana",status:"Guidance",deadline:"Voluntary",req:"LDOE guide; data security, plagiarism, classroom integration, relevant laws.",urg:"Med"},
+    {abbr:"ME",state:"Maine",status:"Guidance",deadline:"Voluntary (Feb 2025)",req:"Interactive AI Guidance Toolkit; policy & data-privacy best practices.",urg:"Low"},
+    {abbr:"MD",state:"Maryland",status:"Mandate",deadline:"Rolling (aligned to state guidance)",req:"SB 720 (AI-Ready Schools Act): districts adopt aligned AI policies, designate AI coordinators; statewide collaborative & PD.",urg:"High"},
+    {abbr:"MA",state:"Massachusetts",status:"Emerging",deadline:"—",req:"No statewide mandate confirmed; active district & legislative interest.",urg:"Low"},
+    {abbr:"MI",state:"Michigan",status:"Emerging",deadline:"—",req:"No statewide mandate confirmed; guidance limited.",urg:"Low"},
+    {abbr:"MN",state:"Minnesota",status:"Guidance",deadline:"Voluntary",req:"DOE guiding principles; access/equity & digital-divide focus.",urg:"Med"},
+    {abbr:"MS",state:"Mississippi",status:"Guidance",deadline:"Voluntary",req:"DOE classroom guidance; cautious use of AI-detection tools.",urg:"Low"},
+    {abbr:"MO",state:"Missouri",status:"Guidance",deadline:"Voluntary",req:"DOE framework for LEAs; PD, data privacy, policy development.",urg:"Med"},
+    {abbr:"MT",state:"Montana",status:"Emerging",deadline:"—",req:"No statewide mandate or DOE guidance confirmed.",urg:"Low"},
+    {abbr:"NE",state:"Nebraska",status:"Emerging",deadline:"—",req:"No statewide mandate confirmed; monitor.",urg:"Low"},
+    {abbr:"NV",state:"Nevada",status:"Guidance",deadline:"Voluntary",req:"DOE 'STELLAR' AI framework; literacy, security, transparency.",urg:"Low"},
+    {abbr:"NH",state:"New Hampshire",status:"Emerging",deadline:"—",req:"No statewide mandate confirmed; district-led.",urg:"Low"},
+    {abbr:"NJ",state:"New Jersey",status:"Emerging",deadline:"—",req:"State AI initiatives & pilots growing; no district-policy mandate confirmed.",urg:"Low"},
+    {abbr:"NM",state:"New Mexico",status:"Guidance",deadline:"Voluntary",req:"DOE guidance tied to Digital Equity in Education Act; human-centric AI.",urg:"Med"},
+    {abbr:"NY",state:"New York",status:"Emerging",deadline:"—",req:"NYSED engagement & data-privacy law (Ed Law 2-d) context; no AUP mandate confirmed.",urg:"Med"},
+    {abbr:"NC",state:"North Carolina",status:"Guidance",deadline:"Voluntary",req:"DPI implementation roadmap; sample generative-AI integrity amendment & literacy by grade.",urg:"Med"},
+    {abbr:"ND",state:"North Dakota",status:"Guidance",deadline:"Voluntary",req:"DPI K-12 AI guidance framework.",urg:"Low"},
+    {abbr:"OH",state:"Ohio",status:"Mandate",deadline:"Jul 1, 2026",req:"RC 3301.24 / HB 96: EVERY district, community & STEM school must adopt an AI policy. Statute addresses deepfakes, data & discipline. Model policy released Jan 2026.",urg:"High"},
+    {abbr:"OK",state:"Oklahoma",status:"Mandate",deadline:"Before 2027-28 school year",req:"SB 1734 (Responsible Technology in Schools Act): adopt written AI policy; approved/prohibited uses, data minimization, annual parent disclosure, human review of high-stakes decisions.",urg:"High"},
+    {abbr:"OR",state:"Oregon",status:"Guidance",deadline:"Voluntary",req:"ODE generative-AI guidance; equity & data-privacy considerations.",urg:"Low"},
+    {abbr:"PA",state:"Pennsylvania",status:"Emerging",deadline:"—",req:"State AI pilots & guidance developing; no district-policy mandate confirmed.",urg:"Low"},
+    {abbr:"RI",state:"Rhode Island",status:"Emerging",deadline:"—",req:"No statewide mandate confirmed; monitor.",urg:"Low"},
+    {abbr:"SC",state:"South Carolina",status:"Emerging",deadline:"—",req:"No statewide mandate or DOE guidance confirmed.",urg:"Low"},
+    {abbr:"SD",state:"South Dakota",status:"Emerging",deadline:"—",req:"No statewide mandate confirmed.",urg:"Low"},
+    {abbr:"TN",state:"Tennessee",status:"Mandate",deadline:"In effect (since 2024-25 SY)",req:"2024 law: local & charter boards must adopt an AI policy on student/faculty/staff use and submit to the state DOE. First statewide AI-policy mandate.",urg:"High"},
+    {abbr:"TX",state:"Texas",status:"Emerging",deadline:"—",req:"TEA activity & large-district policies; no statewide AUP mandate confirmed; watch legislation.",urg:"Med"},
+    {abbr:"UT",state:"Utah",status:"Guidance",deadline:"Voluntary + sandbox law",req:"State AI framework; SB 322 creates a 5-yr ed-tech regulatory sandbox with privacy/safety & human-in-the-loop requirements.",urg:"Med"},
+    {abbr:"VT",state:"Vermont",status:"Guidance",deadline:"Voluntary (Jan 2026)",req:"State framework for responsible AI adoption in K-12.",urg:"Low"},
+    {abbr:"VA",state:"Virginia",status:"Guidance",deadline:"Voluntary",req:"Guidelines for AI integration; roles, responsibilities & ongoing advisory.",urg:"Med"},
+    {abbr:"WA",state:"Washington",status:"Guidance",deadline:"Voluntary",req:"OSPI human-centered AI guidance ('HAIH'); PD & policy sections; cautions on AI detection.",urg:"Med"},
+    {abbr:"WV",state:"West Virginia",status:"Mandate",deadline:"Jul 2027 (conditional)",req:"HB 5205: state board model AI policies auto-apply to districts that fail to adopt a compliant local policy by July 2027. WVDE guidance also published.",urg:"High"},
+    {abbr:"WI",state:"Wisconsin",status:"Guidance",deadline:"Voluntary",req:"DPI evolving guidance; ethics, data policy, PD, equity.",urg:"Med"},
+    {abbr:"WY",state:"Wyoming",status:"Guidance",deadline:"Voluntary",req:"DOE guidance to help districts develop AI use policies for students/staff.",urg:"Low"},
+    ];
+    const URG={High:3,Med:2,Low:1};
+    DATA.forEach(d=>{d.urgRank=URG[d.urg];});
+    const tb=document.getElementById('tb');
+    let filter='all',q='',sortK='urgRank',sortDesc=true;
+    try{const s=JSON.parse(localStorage.getItem('rm_states')||'{}');filter=s.filter||filter;sortK=s.sortK||sortK;sortDesc=s.sortDesc??sortDesc;}catch(e){}
+    function save(){try{localStorage.setItem('rm_states',JSON.stringify({filter,sortK,sortDesc}));}catch(e){}}
+    function badge(s){const c=s==='Mandate'?'b-mandate':s==='Guidance'?'b-guidance':'b-emerging';return '<span class="badge '+c+'">'+s+'</span>';}
+    function urgCls(u){return u==='High'?'urg-high':u==='Med'?'urg-med':'urg-low';}
+    function cards(){
+      const m=DATA.filter(d=>d.status==='Mandate').length;
+      const g=DATA.filter(d=>d.status==='Guidance').length;
+      const e=DATA.filter(d=>d.status==='Emerging').length;
+      const h=DATA.filter(d=>d.urg==='High').length;
+      document.getElementById('cards').innerHTML=
+       '<div class="card crim"><div class="n">'+m+'</div><div class="l">Mandate states (law)</div></div>'+
+       '<div class="card"><div class="n">'+g+'</div><div class="l">Guidance states</div></div>'+
+       '<div class="card"><div class="n">'+e+'</div><div class="l">Emerging / limited</div></div>'+
+       '<div class="card crim"><div class="n">'+h+'</div><div class="l">High-urgency (active deadline)</div></div>';
+      document.getElementById('meta').textContent='50 states · '+m+' with binding mandates · '+g+' with voluntary guidance · updated June 2026';
+    }
+    function render(){
+      let rows=DATA.filter(d=>(filter==='all'||d.status===filter));
+      if(q){const t=q.toLowerCase();rows=rows.filter(d=>(d.state+d.abbr+d.req+d.deadline+d.status).toLowerCase().includes(t));}
+      rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(typeof x==='string'){x=x.toLowerCase();y=y.toLowerCase();}return (x<y?-1:x>y?1:0)*(sortDesc?-1:1);});
+      tb.innerHTML=rows.map(d=>'<tr>'+
+        '<td class="st">'+d.abbr+'</td>'+
+        '<td>'+d.state+'</td>'+
+        '<td>'+badge(d.status)+'</td>'+
+        '<td class="dl">'+d.deadline+'</td>'+
+        '<td class="req col-hide">'+d.req+'</td>'+
+        '<td class="urg '+urgCls(d.urg)+'">'+d.urg+'</td></tr>').join('');
+      document.querySelectorAll('#tbl th').forEach(th=>{th.classList.toggle('sorted',th.dataset.k===sortK);th.classList.toggle('desc',th.dataset.k===sortK&&sortDesc);});
+    }
+    cards();
+    document.getElementById('filters').addEventListener('click',e=>{if(e.target.dataset.f){filter=e.target.dataset.f;document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b.dataset.f===filter));save();render();}});
+    document.getElementById('search').addEventListener('input',e=>{q=e.target.value;render();});
+    document.querySelectorAll('#tbl th').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;if(sortK===k)sortDesc=!sortDesc;else{sortK=k;sortDesc=(k==='urgRank');}save();render();}));
+    document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b.dataset.f===filter));
+    render();
+    </script>
+</body>
+
+</html>
