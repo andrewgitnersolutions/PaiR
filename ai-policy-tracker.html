@@ -112,6 +112,7 @@
                             <th data-k="status">Status</th>
                             <th data-k="deadline">Deadline / In effect</th>
                             <th data-k="req" class="col-hide">Key requirement</th>
+                            <th>Guidance</th>
                             <th data-k="urgRank">RaiseMark urgency</th>
                         </tr></thead>
                         <tbody id="tb"></tbody>
@@ -199,6 +200,8 @@
     {abbr:"WY",state:"Wyoming",status:"Guidance",deadline:"Voluntary",req:"DOE guidance to help districts develop AI use policies for students/staff.",urg:"Low"},
     ];
     const URG={High:3,Med:2,Low:1};
+    const BP="https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education";
+    const LINKS={AL:BP+"#Alabama",CA:BP+"#California",CO:BP+"#Colorado",CT:BP+"#Connecticut",DE:BP+"#Delaware",GA:BP+"#Georgia",HI:BP+"#Hawaii",IL:"https://www.aiforeducation.io/ai-resources/state-ai-guidance",IN:BP+"#Indiana",KY:BP+"#Kentucky",LA:BP+"#Louisiana",ME:BP+"#Maine",MD:"https://marylandpublicschools.org/stateboard/documents/2026/0224/artificial-intelligence-guidance-a.pdf",MN:BP+"#Minnesota",MS:BP+"#Mississippi",MO:BP+"#Missouri",NV:BP+"#Nevada",NM:BP+"#New_Mexico",NC:BP+"#North_Carolina",ND:BP+"#North_Dakota",OH:"https://education.ohio.gov/Topics/AI-in-Ohio-s-Education/Model-Policy",OK:BP+"#Oklahoma",OR:BP+"#Oregon",TN:"https://tnscore.org/resources/tennessee-opportunity-for-ai-in-education",UT:BP+"#Utah",VT:"https://www.aiforeducation.io/ai-resources/state-ai-guidance",VA:BP+"#Virginia",WA:BP+"#Washington",WV:BP+"#West_Virginia",WI:BP+"#Wisconsin",WY:BP+"#Wyoming"};
     DATA.forEach(d=>{d.urgRank=URG[d.urg];});
     const tb=document.getElementById('tb');
     let filter='all',q='',sortK='urgRank',sortDesc=true;
@@ -228,13 +231,14 @@
         '<td>'+badge(d.status)+'</td>'+
         '<td class="dl">'+d.deadline+'</td>'+
         '<td class="req col-hide">'+d.req+'</td>'+
+        '<td>'+(LINKS[d.abbr]?'<a href="'+LINKS[d.abbr]+'" target="_blank" rel="noopener" style="color:#A8192E;font-weight:600;text-decoration:none">View &#8599;</a>':'<span style="color:#6B7280">&mdash;</span>')+'</td>'+
         '<td class="urg '+urgCls(d.urg)+'">'+d.urg+'</td></tr>').join('');
       document.querySelectorAll('#tbl th').forEach(th=>{th.classList.toggle('sorted',th.dataset.k===sortK);th.classList.toggle('desc',th.dataset.k===sortK&&sortDesc);});
     }
     cards();
     document.getElementById('filters').addEventListener('click',e=>{if(e.target.dataset.f){filter=e.target.dataset.f;document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b.dataset.f===filter));save();render();}});
     document.getElementById('search').addEventListener('input',e=>{q=e.target.value;render();});
-    document.querySelectorAll('#tbl th').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;if(sortK===k)sortDesc=!sortDesc;else{sortK=k;sortDesc=(k==='urgRank');}save();render();}));
+    document.querySelectorAll('#tbl th').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;if(!k)return;if(sortK===k)sortDesc=!sortDesc;else{sortK=k;sortDesc=(k==='urgRank');}save();render();}));
     document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b.dataset.f===filter));
     render();
     </script>
