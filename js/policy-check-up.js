@@ -61,8 +61,16 @@ const $ = (id) => document.getElementById(id);
 /* ---------------- nav ---------------- */
 function go(id){
   document.querySelectorAll('#ppt-app .screen').forEach(s=>s.classList.remove('active'));
-  $('s-'+id).classList.add('active');
+  const target = $('s-'+id);
+  target.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+
+  // Shift focus to the new screen's heading to notify screen readers
+  const heading = target.querySelector('h1, h2, .step, .eyebrow');
+  if(heading) {
+    heading.setAttribute('tabindex', '-1');
+    heading.focus();
+  }
 }
 function toast(msg){
   const t=$('toast'); t.textContent=msg; t.classList.add('show');

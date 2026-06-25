@@ -53,7 +53,7 @@
                 <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 48px; width: auto;">
             </a>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="team.html" class="nav-link">Team</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
@@ -62,7 +62,7 @@
                     <li><a href="contact.html" class="btn btn--primary btn--sm">Work With Us</a></li>
                 </ul>
             </nav>
-            <button class="mobile-toggle" aria-label="Toggle menu">
+            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -91,12 +91,12 @@
                     <div class="cards" id="cards"></div>
 
                     <div class="controls">
-                        <input id="search" placeholder="Search state, requirement, or deadline&hellip;" autocomplete="off">
+                        <input id="search" placeholder="Search state, requirement, or deadline&hellip;" autocomplete="off" aria-label="Search states, requirements, or deadlines">
                         <div class="filters" id="filters">
-                            <button class="fbtn active" data-f="all">All</button>
-                            <button class="fbtn" data-f="Mandate">Mandate (law)</button>
-                            <button class="fbtn" data-f="Guidance">Guidance</button>
-                            <button class="fbtn" data-f="Emerging">Emerging / limited</button>
+                            <button class="fbtn active" data-f="all" aria-pressed="true">All</button>
+                            <button class="fbtn" data-f="Mandate" aria-pressed="false">Mandate (law)</button>
+                            <button class="fbtn" data-f="Guidance" aria-pressed="false">Guidance</button>
+                            <button class="fbtn" data-f="Emerging" aria-pressed="false">Emerging / limited</button>
                         </div>
                     </div>
                     <div class="legend">
@@ -108,13 +108,13 @@
                     <div class="tbl-wrap" style="margin-top:12px;">
                     <table id="tbl">
                         <thead><tr>
-                            <th data-k="abbr" class="st">St</th>
-                            <th data-k="state">State</th>
-                            <th data-k="status">Status</th>
-                            <th data-k="deadline">Deadline / In effect</th>
-                            <th data-k="req" class="col-hide">Key requirement</th>
-                            <th>Guidance</th>
-                            <th data-k="urgRank">RaiseMark urgency</th>
+                            <th scope="col" data-k="abbr" class="st" role="columnheader" tabindex="0" aria-sort="none">St</th>
+                            <th scope="col" data-k="state" role="columnheader" tabindex="0" aria-sort="none">State</th>
+                            <th scope="col" data-k="status" role="columnheader" tabindex="0" aria-sort="none">Status</th>
+                            <th scope="col" data-k="deadline" role="columnheader" tabindex="0" aria-sort="none">Deadline / In effect</th>
+                            <th scope="col" data-k="req" class="col-hide" role="columnheader" tabindex="0" aria-sort="none">Key requirement</th>
+                            <th scope="col">Guidance</th>
+                            <th scope="col" data-k="urgRank" role="columnheader" tabindex="0" aria-sort="descending">RaiseMark urgency</th>
                         </tr></thead>
                         <tbody id="tb"></tbody>
                     </table>
@@ -234,13 +234,61 @@
         '<td class="req col-hide">'+d.req+'</td>'+
         '<td>'+(LINKS[d.abbr]?'<a href="'+LINKS[d.abbr]+'" target="_blank" rel="noopener" style="color:#A8192E;font-weight:600;text-decoration:none">View &#8599;</a>':'<span style="color:#6B7280">&mdash;</span>')+'</td>'+
         '<td class="urg '+urgCls(d.urg)+'">'+d.urg+'</td></tr>').join('');
-      document.querySelectorAll('#tbl th').forEach(th=>{th.classList.toggle('sorted',th.dataset.k===sortK);th.classList.toggle('desc',th.dataset.k===sortK&&sortDesc);});
+      
+      // Update dynamic table header sorting aria attributes
+      document.querySelectorAll('#tbl th').forEach(th=>{
+        const isCurrent = th.dataset.k === sortK;
+        th.classList.toggle('sorted', isCurrent);
+        th.classList.toggle('desc', isCurrent && sortDesc);
+        if (th.dataset.k) {
+          th.setAttribute('aria-sort', isCurrent ? (sortDesc ? 'descending' : 'ascending') : 'none');
+        }
+      });
     }
     cards();
-    document.getElementById('filters').addEventListener('click',e=>{if(e.target.dataset.f){filter=e.target.dataset.f;document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b.dataset.f===filter));save();render();}});
+
+    function updateFilters() {
+      document.querySelectorAll('.fbtn').forEach(b=>{
+        const active = b.dataset.f === filter;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+
+    document.getElementById('filters').addEventListener('click',e=>{
+      if(e.target.dataset.f){
+        filter=e.target.dataset.f;
+        updateFilters();
+        save();
+        render();
+      }
+    });
+
     document.getElementById('search').addEventListener('input',e=>{q=e.target.value;render();});
-    document.querySelectorAll('#tbl th').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;if(!k)return;if(sortK===k)sortDesc=!sortDesc;else{sortK=k;sortDesc=(k==='urgRank');}save();render();}));
-    document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b.dataset.f===filter));
+
+    function toggleSort(th){
+      const k=th.dataset.k;
+      if(!k)return;
+      if(sortK===k)sortDesc=!sortDesc;
+      else{sortK=k;sortDesc=(k==='urgRank');}
+      save();
+      render();
+    }
+
+    // Attach click and keydown sorting listeners to headers
+    document.querySelectorAll('#tbl th').forEach(th=>{
+      if(th.dataset.k){
+        th.addEventListener('click',()=>toggleSort(th));
+        th.addEventListener('keydown',e=>{
+          if(e.key==='Enter' || e.key===' '){
+            e.preventDefault();
+            toggleSort(th);
+          }
+        });
+      }
+    });
+
+    updateFilters();
     render();
     </script>
 </body>

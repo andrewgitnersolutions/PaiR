@@ -20,7 +20,7 @@
                 <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 48px; width: auto;">
             </a>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="team.html" class="nav-link">Team</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
@@ -29,7 +29,7 @@
                     <li><a href="contact.html" class="btn btn--primary btn--sm">Work With Us</a></li>
                 </ul>
             </nav>
-            <button class="mobile-toggle" aria-label="Toggle menu">
+            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -39,11 +39,11 @@
         <!-- Hero -->
         <section class="hero">
             <div class="container">
+                <h1 class="sr-only">RaiseMark — Elevating K-12 AI Governance</h1>
                 <div class="hero__inner">
                     <div class="hero__logo">
                         <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 120px; width: auto; margin-bottom: 1rem;">
                     </div>
-                    <div class="hero__tagline">A HIGHER STANDARD</div>
                     <p>Elevating organizational performance through evidence-based AI integration and cross-disciplinary
                         expertise. We help you find the signal in the noise.</p>
                     <div class="hero__actions">
