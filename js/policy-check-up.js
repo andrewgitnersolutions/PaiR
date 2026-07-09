@@ -94,7 +94,10 @@ function onState(){
 }
 function pickSize(btn,v){ st.size=v; segSel('seg-size',btn); checkQualify(); }
 function pickPolicy(btn,v){ st.policy=v; segSel('seg-policy',btn); checkQualify(); }
-function segSel(group,btn){ document.querySelectorAll('#'+group+' button').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
+function segSel(group,btn){
+  document.querySelectorAll('#'+group+' button').forEach(b=>{ b.classList.remove('sel'); b.setAttribute('aria-pressed','false'); });
+  btn.classList.add('sel'); btn.setAttribute('aria-pressed','true');
+}
 function checkQualify(){
   const ok = st.state && st.size && st.policy;
   const b=$('qualifyNext');
@@ -112,12 +115,18 @@ function renderQuestion(){
   $('progFill').style.width=(((st.qi)/QUESTIONS.length)*100)+'%';
   $('qBack').style.display = st.qi===0 ? 'none':'inline';
   document.querySelectorAll('#s-diagnostic .opt').forEach(o=>{
-    o.classList.toggle('sel', st.answers[st.qi]===o.dataset.v);
+    const sel = st.answers[st.qi]===o.dataset.v;
+    o.classList.toggle('sel', sel);
+    o.setAttribute('aria-pressed', sel?'true':'false');
   });
 }
 function answer(v){
   st.answers[st.qi]=v;
-  document.querySelectorAll('#s-diagnostic .opt').forEach(o=>o.classList.toggle('sel',o.dataset.v===v));
+  document.querySelectorAll('#s-diagnostic .opt').forEach(o=>{
+    const sel = o.dataset.v===v;
+    o.classList.toggle('sel', sel);
+    o.setAttribute('aria-pressed', sel?'true':'false');
+  });
   $('progFill').style.width=(((st.qi+1)/QUESTIONS.length)*100)+'%';
   setTimeout(()=>{
     if(st.qi < QUESTIONS.length-1){ st.qi++; renderQuestion(); }
@@ -279,7 +288,7 @@ function restart(){
   st={ state:"", mandate:null, size:"", policy:"", answers:Array(QUESTIONS.length).fill(null), qi:0 };
   $('f-state').value="";
   $('mandateFlag').classList.remove('show');
-  document.querySelectorAll('#ppt-app .seg button').forEach(b=>b.classList.remove('sel'));
+  document.querySelectorAll('#ppt-app .seg button').forEach(b=>{ b.classList.remove('sel'); b.setAttribute('aria-pressed','false'); });
   $('g-name').value=''; $('g-email').value=''; $('g-dist').value='';
   checkQualify();
   go('landing');

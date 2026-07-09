@@ -41,6 +41,8 @@
 
 <body>
 
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- Header -->
     <header class="site-header">
         <div class="container header-inner">
@@ -63,7 +65,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <div id="ppt-app">
 
         <!-- 1. LANDING (full-width hero band, mirrors the site hero) -->
@@ -112,20 +114,20 @@
               <div class="mandate-flag" id="mandateFlag"></div>
 
               <div class="field">
-                <label>How large is your district?</label>
-                <div class="seg" id="seg-size">
-                  <button data-size="small">Under 2,000 students</button>
-                  <button data-size="mid">2,000–10,000</button>
-                  <button data-size="large">10,000+</button>
+                <label id="lbl-size">How large is your district?</label>
+                <div class="seg" id="seg-size" role="group" aria-labelledby="lbl-size">
+                  <button data-size="small" aria-pressed="false">Under 2,000 students</button>
+                  <button data-size="mid" aria-pressed="false">2,000–10,000</button>
+                  <button data-size="large" aria-pressed="false">10,000+</button>
                 </div>
               </div>
 
               <div class="field">
-                <label>Where are you with an AI policy today?</label>
-                <div class="seg" id="seg-policy">
-                  <button data-policy="adopted">Adopted by the board</button>
-                  <button data-policy="progress">In progress</button>
-                  <button data-policy="none">Not started</button>
+                <label id="lbl-policy">Where are you with an AI policy today?</label>
+                <div class="seg" id="seg-policy" role="group" aria-labelledby="lbl-policy">
+                  <button data-policy="adopted" aria-pressed="false">Adopted by the board</button>
+                  <button data-policy="progress" aria-pressed="false">In progress</button>
+                  <button data-policy="none" aria-pressed="false">Not started</button>
                 </div>
               </div>
 
@@ -144,12 +146,12 @@
             </div>
             <div class="qcard">
               <span class="qtag" id="qTag">Domain</span>
-              <div class="qtext" id="qText">Question</div>
+              <div class="qtext" id="qText" aria-live="polite">Question</div>
               <div class="qhint" id="qHint"></div>
               <div class="opts">
-                <button class="opt" data-v="yes"><span class="ic">✓</span><span>Yes — this is done</span></button>
-                <button class="opt" data-v="unsure"><span class="ic">?</span><span>Not sure / partly</span></button>
-                <button class="opt" data-v="no"><span class="ic">✕</span><span>No — not yet</span></button>
+                <button class="opt" data-v="yes" aria-pressed="false"><span class="ic" aria-hidden="true">✓</span><span>Yes — this is done</span></button>
+                <button class="opt" data-v="unsure" aria-pressed="false"><span class="ic" aria-hidden="true">?</span><span>Not sure / partly</span></button>
+                <button class="opt" data-v="no" aria-pressed="false"><span class="ic" aria-hidden="true">✕</span><span>No — not yet</span></button>
               </div>
               <button class="backlink" id="qBack" data-prev>← Previous question</button>
             </div>
@@ -210,9 +212,9 @@
               <div class="gate-form">
                 <h2>Your gap report is ready.</h2>
                 <p>We'll show your full report on the next screen — your district's specific gaps, what to fix first, and how you compare to similar districts.</p>
-                <div class="field"><label for="g-name">Your name</label><input id="g-name" type="text" placeholder="Jane Superintendent"></div>
-                <div class="field"><label for="g-email">Work email</label><input id="g-email" type="email" placeholder="you@yourdistrict.org"></div>
-                <div class="field"><label for="g-dist">District</label><input id="g-dist" type="text" placeholder="Your district name"></div>
+                <div class="field"><label for="g-name">Your name</label><input id="g-name" type="text" autocomplete="name" required placeholder="Jane Superintendent"></div>
+                <div class="field"><label for="g-email">Work email</label><input id="g-email" type="email" autocomplete="email" required placeholder="you@yourdistrict.org"></div>
+                <div class="field"><label for="g-dist">District</label><input id="g-dist" type="text" autocomplete="organization" required placeholder="Your district name"></div>
                 <div class="cta-row" style="margin-top:20px">
                   <button class="btn btn-primary btn-block" id="gateSubmit" data-submit>Show my report</button>
                 </div>
@@ -263,7 +265,7 @@
           </section>
 
         </div>
-        <div class="toast" id="toast"></div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
       </div>
     </main>
 

@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="css/global.css">
     <style>
     /* Scoped to .rm-tracker so it cannot affect the rest of the site */
-    .rm-tracker{--t-navy:#1B3A6B;--t-midnavy:#2A5298;--t-crimson:#A8192E;--t-crimtint:#F7E8EA;--t-lgrey:#E8ECF2;--t-nwhite:#F0F2F5;--t-mgrey:#6B7280;--t-nblack:#1A1F2E;--t-rule:#CDD4E0;color:var(--t-nblack);font-size:14px;line-height:1.45;}
+    .rm-tracker{--t-navy:#1B3A6B;--t-midnavy:#2A5298;--t-crimson:#A8192E;--t-crimtint:#F7E8EA;--t-lgrey:#E8ECF2;--t-nwhite:#F0F2F5;--t-mgrey:#5A6472;--t-nblack:#1A1F2E;--t-rule:#CDD4E0;color:var(--t-nblack);font-size:14px;line-height:1.45;}
     .rm-tracker .meta{color:var(--t-mgrey);font-size:12px;margin:0 0 16px;}
     .rm-tracker .cards{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 18px;}
     .rm-tracker .card{flex:1;min-width:150px;border:1px solid var(--t-rule);border-radius:10px;padding:12px 14px;background:var(--t-nwhite);}
@@ -47,7 +47,8 @@
     .rm-tracker .fbtn{padding:7px 12px;border:1px solid var(--t-rule);background:#fff;border-radius:20px;cursor:pointer;font-size:12.5px;font-family:inherit;color:var(--t-nblack);}
     .rm-tracker .fbtn.active{background:var(--t-navy);color:#fff;border-color:var(--t-navy);}
     .rm-tracker table{width:100%;border-collapse:collapse;}
-    .rm-tracker th{background:var(--t-navy);color:#fff;text-align:left;padding:9px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;cursor:pointer;}
+    .rm-tracker th{background:var(--t-navy);color:#fff;text-align:left;padding:9px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;}
+    .rm-tracker th[data-k]{cursor:pointer;}
     .rm-tracker th.sorted::after{content:" \25B4";}.rm-tracker th.sorted.desc::after{content:" \25BE";}
     .rm-tracker td{padding:9px 10px;border-bottom:1px solid var(--t-lgrey);vertical-align:top;}
     .rm-tracker tr:hover td{background:var(--t-nwhite);}
@@ -69,6 +70,8 @@
 </head>
 
 <body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Header -->
     <header class="site-header">
@@ -92,7 +95,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Page Hero -->
         <section class="hero">
             <div class="container">
@@ -131,6 +134,7 @@
 
                     <div class="tbl-wrap" style="margin-top:12px;">
                     <table id="tbl">
+                        <caption class="sr-only">State-by-state K-12 AI policy mandates, deadlines, and guidance. Column headers are sortable.</caption>
                         <thead><tr>
                             <th scope="col" data-k="abbr" class="st" role="columnheader" tabindex="0" aria-sort="none">St</th>
                             <th scope="col" data-k="state" role="columnheader" tabindex="0" aria-sort="none">State</th>
@@ -256,7 +260,7 @@
         '<td>'+badge(d.status)+'</td>'+
         '<td class="dl">'+d.deadline+'</td>'+
         '<td class="req col-hide">'+d.req+'</td>'+
-        '<td>'+(LINKS[d.abbr]?'<a href="'+LINKS[d.abbr]+'" target="_blank" rel="noopener" style="color:#A8192E;font-weight:600;text-decoration:none">View &#8599;</a>':'<span style="color:#6B7280">&mdash;</span>')+'</td>'+
+        '<td>'+(LINKS[d.abbr]?'<a href="'+LINKS[d.abbr]+'" target="_blank" rel="noopener" aria-label="View guidance for '+d.state+' (opens in new tab)" style="color:#A8192E;font-weight:600;text-decoration:none">View &#8599;</a>':'<span style="color:#5A6472">&mdash;</span>')+'</td>'+
         '<td class="urg '+urgCls(d.urg)+'">'+d.urg+'</td></tr>').join('');
       
       // Update dynamic table header sorting aria attributes

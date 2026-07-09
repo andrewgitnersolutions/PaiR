@@ -83,7 +83,10 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+
+      .skip-link { position: absolute; top: -100px; left: 16px; z-index: 2000; background: var(--navy); color: #fff; padding: 12px 20px; font-family: var(--sans); font-weight: 600; text-decoration: none; }
+      .skip-link:focus { top: 0; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
   body {
     background: var(--off-white);
@@ -128,7 +131,7 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.72);
     border-left: 1px solid rgba(255,255,255,0.15);
     padding-left: 14px;
   }
@@ -559,6 +562,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ─── MASTHEAD ─── -->
 <header class="masthead">
   <div class="masthead-inner">
@@ -608,7 +613,7 @@
   </aside>
 
   <!-- ─── MAIN CONTENT ─── -->
-  <article class="main-col">
+  <main class="main-col" id="main-content">
 
     <header class="article-header">
       <div class="kicker">Research Analysis</div>
@@ -850,7 +855,7 @@
 
     <div class="methodology-tag">Peterson Research Project Methodology</div>
 
-  </article>
+  </main>
 
 </div>
 
