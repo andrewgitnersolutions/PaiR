@@ -175,29 +175,57 @@ Using a local HTTP server ensures absolute paths, relative links, and asset fetc
 
 ---
 
-## 🚢 How to Deploy Changes to Production
+## 🤝 Partner Review & Staging Workflow
 
-The site uses continuous deployment via **GitHub Pages**. Any change pushed to the main branch is deployed live automatically.
+To ensure that partners (**Dwight Jones**, **Don Peterson**, and **Andrew Gitner**) can review proposed website changes and discuss them before they go public, the project uses a two-tier release workflow:
 
-### 1. Test Locally
-Ensure all internal links work, images load, and there are no formatting issues on mobile screens.
-
-### 2. Stage, Commit, and Push
-Run the following commands in your terminal:
-```bash
-# Check status of changed files
-git status
-
-# Stage changes
-git add .
-
-# Commit changes with a descriptive message
-git commit -m "Add new article on student data privacy"
-
-# Push to GitHub main branch
-git push origin main
+```
+[ Antigravity / staging branch ]
+             │
+             ▼
+[ Private Staging Preview Site: andrewgitnersolutions.github.io/raisemark-staging/ ]
+             │
+             │ (Dwight & Don review, discuss in Google Doc / Email, and approve)
+             ▼
+[ /raisemark-website-push-to-prod ]
+             │
+             ▼
+[ public branch ➔ main branch ➔ raisemarkai.com (Live Web) ]
 ```
 
-### 3. Verify Live Site
-Changes usually take **1 to 2 minutes** to build and publish.
-Visit [raisemarkai.com](https://raisemarkai.com) to confirm your updates are live.
+### 1. Developing on the `staging` Branch
+- All day-to-day conversational editing with Antigravity happens on the **`staging`** branch.
+- To deploy your latest work to the partner staging site, run:
+  ```bash
+  ./scripts/deploy-staging.sh
+  ```
+  *(or push to the `staging` branch on GitHub).*
+- The private staging preview updates within seconds at:
+  👉 **`https://andrewgitnersolutions.github.io/raisemark-staging/`**
+
+### 2. Partner Review & Discussion
+- Share the staging link with Dwight and Don.
+- The staging preview features a top **Partner Review Bar** that allows partners to:
+  - Open the **Partner Review Notes Google Doc** in Google Drive (`Website Management` folder).
+  - Open a pre-addressed email thread to all three partners.
+  - Compare pages side-by-side with the live production site.
+- Record any copy edits, legal adjustments, or pricing reviews in the notes document.
+
+### 3. Deploying Approved Changes to Production
+
+Once partner sign-off is complete, you have two simple ways to deploy to the live site:
+
+- **Option A (Inside Antigravity — Recommended):**
+  Simply type the action command:
+  ```text
+  /raisemark-website-push-to-prod
+  ```
+  Antigravity will verify all pre-flight checks, merge `staging` into `public`, and push directly to `main` on GitHub to launch the updates live to [raisemarkai.com](https://raisemarkai.com).
+
+- **Option B (Terminal Command):**
+  Run the promotion script directly:
+  ```bash
+  ./scripts/publish-to-public.sh
+  ```
+
+Changes take approximately **1 to 2 minutes** to build and publish on [raisemarkai.com](https://raisemarkai.com).

@@ -94,3 +94,18 @@ Whenever a navigation item is added, modified, or removed:
 - **Gate 1 (Pricing):** Only $4,500 Scorecard authorized.
 - **Gate 2 (Articles):** Clearance required before publishing draft documents.
 - **Gate 3 (Methodology):** Naming confirmation required before public rollout.
+
+---
+
+## 7. Staging & Production Deployment Protocol
+
+### Working Branch:
+- All interactive development in this Antigravity project workspace occurs on the `staging` branch.
+- Changes on `staging` are deployed to the private, unindexed partner preview environment:
+  `https://andrewgitnersolutions.github.io/raisemark-staging/`
+- Run `./scripts/deploy-staging.sh` or push to `staging` to update the preview immediately.
+
+### Production Promotion Action:
+- To deploy approved changes to the public website, invoke `/raisemark-website-push-to-prod` (or run `./scripts/publish-to-public.sh`).
+- Pipeline: `staging` &rarr; `public` &rarr; `main` &rarr; `https://raisemarkai.com`.
+- This ensures partner review (Dwight Jones, Don Peterson) and safety gates are satisfied prior to open web release.

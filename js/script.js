@@ -83,4 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     });
+
+    // Partner Staging Review Banner (activates on staging/preview only; never on production)
+    const host = window.location.hostname;
+    if (host.includes('github.io') || host === 'localhost' || host === '127.0.0.1') {
+        const stagingScript = document.createElement('script');
+        stagingScript.src = 'js/staging-banner.js';
+        stagingScript.defer = true;
+        document.head.appendChild(stagingScript);
+    }
 });
