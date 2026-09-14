@@ -198,46 +198,6 @@
         color: var(--text-body);
       }
 
-      .rubric-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.25rem;
-        margin-top: 2rem;
-      }
-
-      .rubric-card {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 1.5rem;
-        box-shadow: var(--shadow-sm);
-      }
-
-      .rubric-card h4 {
-        margin: 0 0 0.5rem;
-        font-size: 1.15rem;
-        color: var(--navy);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .rubric-card .pts-badge {
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: var(--crimson);
-        background: var(--crimson-light);
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
-      }
-
-      .rubric-card p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: var(--text-body);
-        line-height: 1.5;
-      }
-
       .quadrant-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -349,8 +309,8 @@
                             <span>Minimal administrative lift for district IT &amp; cabinet</span>
                         </div>
                         <div class="stat-item">
-                            <strong>CUEI-AI Rubric</strong>
-                            <span>100-point multi-dimensional tool scoring</span>
+                            <strong>Multi-Dimensional Scoring</strong>
+                            <span>Rigorous evaluation across efficacy, privacy, and cost</span>
                         </div>
                         <div class="stat-item">
                             <strong>Board-Ready</strong>
@@ -425,9 +385,9 @@
                         <div class="timeline-step__marker">03</div>
                         <div class="timeline-step__content">
                             <span class="timeline-step__time">Week 2 &middot; Analysis &amp; Stakeholder Interviews</span>
-                            <h3>CUEI-AI Rubric Scoring &amp; Ground Truth</h3>
+                            <h3>Multi-Dimensional Analysis &amp; Ground Truth</h3>
                             <p>
-                                We conduct targeted virtual interviews with key district stakeholders &mdash; technology leadership, curriculum directors, and digital teacher-librarians. Every identified tool is rigorously evaluated against our six-dimension CUEI-AI scoring framework.
+                                We conduct targeted virtual interviews with key district stakeholders &mdash; technology leadership, curriculum directors, and digital teacher-librarians. Every identified tool is evaluated against RaiseMark's proprietary rubric across pedagogical efficacy, student data privacy, and operational value.
                             </p>
                         </div>
                     </div>
@@ -447,72 +407,33 @@
             </div>
         </section>
 
-        <!-- CUEI-AI Framework Strip -->
+        <!-- Decision Framework Strip -->
         <section class="section section--alt" style="padding: 4rem 0;">
             <div class="container">
                 <div class="section-header" style="text-align: left; max-width: 860px; margin: 0 auto 1.5rem;">
-                    <span class="review-badge">Evaluation Methodology</span>
-                    <h2>The CUEI-AI Scoring Framework</h2>
+                    <span class="review-badge">Decision Framework</span>
+                    <h2>Actionable Portfolio Determinations</h2>
                     <p style="font-size: 1.05rem; color: var(--text-body); margin-bottom: 0;">
-                        Every AI application, plugin, and platform detected in your district is scored across six institutional dimensions (100 points total) to deliver objective, actionable determinations.
+                        Our proprietary diagnostic evaluates every detected tool against instructional validity, student data privacy, and operational efficiency. Rather than delivering abstract scores, the review produces concrete administrative determinations for every platform in your environment:
                     </p>
                 </div>
 
-                <div class="rubric-grid" style="max-width: 860px; margin: 2rem auto 0;">
-                    <div class="rubric-card">
-                        <h4>Cost / Value <span class="pts-badge">20 Pts</span></h4>
-                        <p>Total cost of ownership, seat license utilization, redundant software spend, and commercial terms relative to educational outcomes.</p>
+                <div class="quadrant-grid" style="max-width: 860px; margin: 2rem auto 0;">
+                    <div class="quadrant-box quadrant-box--retain">
+                        <strong>RETAIN</strong>
+                        <p>High efficacy and vetted privacy compliance. Maintain enterprise contract and support continued adoption.</p>
                     </div>
-
-                    <div class="rubric-card">
-                        <h4>Utilization <span class="pts-badge">20 Pts</span></h4>
-                        <p>Actual telemetry data across campuses: active student/staff adoption, depth of usage, and dependency across key grade bands.</p>
+                    <div class="quadrant-box quadrant-box--rightsize">
+                        <strong>RIGHT-SIZE</strong>
+                        <p>Valuable capability with poor license utilization. Renegotiate seat counts or consolidate redundant contracts.</p>
                     </div>
-
-                    <div class="rubric-card">
-                        <h4>Efficacy <span class="pts-badge">20 Pts</span></h4>
-                        <p>Pedagogical validity, alignment with academic standards, cognitive offloading risk, and verified impact on instructional goals.</p>
+                    <div class="quadrant-box quadrant-box--sunset">
+                        <strong>SUNSET</strong>
+                        <p>Low utilization, redundant capabilities, or unfavorable renewal terms. Structured phase-out with minimal classroom disruption.</p>
                     </div>
-
-                    <div class="rubric-card">
-                        <h4>Privacy <span class="pts-badge">20 Pts</span></h4>
-                        <p>FERPA, COPPA, and state data privacy compliance, model training on student data, data retention windows, and vendor sharing clauses.</p>
-                    </div>
-
-                    <div class="rubric-card">
-                        <h4>Policy Alignment <span class="pts-badge">10 Pts</span></h4>
-                        <p>Consistency with board policies, current Acceptable Use Policies (AUP), and state-level legislative AI disclosure mandates.</p>
-                    </div>
-
-                    <div class="rubric-card">
-                        <h4>Transparency <span class="pts-badge">10 Pts</span></h4>
-                        <p>Model documentation, algorithmic bias auditing, disclosure of underlying foundation models, and explainability for staff and parents.</p>
-                    </div>
-                </div>
-
-                <!-- 4 Action Quadrants -->
-                <div style="max-width: 860px; margin: 3rem auto 0;">
-                    <h3 style="font-size: 1.3rem; color: var(--navy); margin-bottom: 0.5rem;">Actionable Portfolio Determinations</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 1rem;">
-                        Scores translate directly into four concrete administrative recommendations:
-                    </p>
-                    <div class="quadrant-grid">
-                        <div class="quadrant-box quadrant-box--retain">
-                            <strong>RETAIN</strong>
-                            <p>High efficacy and vetted privacy compliance. Maintain enterprise contract and support continued adoption.</p>
-                        </div>
-                        <div class="quadrant-box quadrant-box--rightsize">
-                            <strong>RIGHT-SIZE</strong>
-                            <p>Valuable capability with poor license utilization. Renegotiate seat counts or consolidate redundant contracts.</p>
-                        </div>
-                        <div class="quadrant-box quadrant-box--sunset">
-                            <strong>SUNSET</strong>
-                            <p>Low utilization, redundant capabilities, or unfavorable renewal terms. Structured phase-out with minimal classroom disruption.</p>
-                        </div>
-                        <div class="quadrant-box quadrant-box--discourage">
-                            <strong>DISCOURAGE</strong>
-                            <p>Unacceptable student privacy risks, model training exposure, or harmful pedagogical profile. Block at network edge.</p>
-                        </div>
+                    <div class="quadrant-box quadrant-box--discourage">
+                        <strong>DISCOURAGE</strong>
+                        <p>Unacceptable student privacy risks, model training exposure, or harmful pedagogical profile. Block at network edge.</p>
                     </div>
                 </div>
             </div>
@@ -545,7 +466,7 @@
                     </div>
 
                     <div class="card card--navy">
-                        <h3>03 &middot; CUEI-AI Scorecards</h3>
+                        <h3>03 &middot; Tool-by-Tool Governance Scorecards</h3>
                         <p>
                             Detailed scoring for every major software platform evaluated, providing your procurement office with documented rationale for contract renewals, consolidations, or terminations.
                         </p>
