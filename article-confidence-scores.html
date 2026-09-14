@@ -14,20 +14,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Trouble With AI's Confidence Scores | RaiseMark</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <meta name="description" content="Why asking LLMs how sure they are isn't a one-size-fits-all fix for district AI trust — and how model size changes the prompt recipe. A RaiseMark research briefing.">
+    <meta name="description" content="Why asking LLMs how sure they are is not calibrated truth. An analysis of model scale, statistical uncertainty, and AI verification in K-12 classrooms.">
+    <link rel="canonical" href="https://raisemarkai.com/article-confidence-scores.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://raisemarkai.com/article-confidence-scores.html">
     <meta property="og:title" content="The Trouble With AI's Confidence Scores | RaiseMark">
-    <meta property="og:description" content="Why asking LLMs how sure they are isn't a one-size-fits-all fix for district AI trust — and how model size changes the prompt recipe. A RaiseMark research briefing.">
+    <meta property="og:description" content="Why asking LLMs how sure they are is not calibrated truth. An analysis of model scale, statistical uncertainty, and AI verification in K-12 classrooms.">
     <meta property="og:image" content="https://raisemarkai.com/assets/confidence-scores.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://raisemarkai.com/article-confidence-scores.html">
     <meta name="twitter:title" content="The Trouble With AI's Confidence Scores | RaiseMark">
-    <meta name="twitter:description" content="Why asking LLMs how sure they are isn't a one-size-fits-all fix for district AI trust — and how model size changes the prompt recipe. A RaiseMark research briefing.">
+    <meta name="twitter:description" content="Why asking LLMs how sure they are is not calibrated truth. An analysis of model scale, statistical uncertainty, and AI verification in K-12 classrooms.">
     <meta name="twitter:image" content="https://raisemarkai.com/assets/confidence-scores.jpg">
 
     <!-- Structured Data (JSON-LD Article Schema) -->
@@ -37,16 +38,22 @@
       "@type": "Article",
       "headline": "The Trouble With AI's Confidence Scores",
       "image": "https://raisemarkai.com/assets/confidence-scores.jpg",
+      "datePublished": "2026-07-29",
+      "dateModified": "2026-09-13",
       "author": {
         "@type": "Organization",
-        "name": "RaiseMark"
+        "name": "RaiseMark",
+        "url": "https://raisemarkai.com"
       },
       "publisher": {
         "@type": "Organization",
         "name": "RaiseMark",
+        "url": "https://raisemarkai.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://raisemarkai.com/assets/raisemark-logo.png"
+          "url": "https://raisemarkai.com/assets/raisemark-logo.png",
+          "width": 1024,
+          "height": 558
         }
       },
       "url": "https://raisemarkai.com/article-confidence-scores.html",
@@ -54,7 +61,7 @@
         "@type": "WebPage",
         "@id": "https://raisemarkai.com/article-confidence-scores.html"
       },
-      "description": "Why asking LLMs how sure they are isn't a one-size-fits-all fix for district AI trust — and how model size changes the prompt recipe. A RaiseMark research briefing."
+      "description": "Why asking LLMs how sure they are is not calibrated truth. An analysis of model scale, statistical uncertainty, and AI verification in K-12 classrooms."
     }
     </script>
 
@@ -468,6 +475,44 @@
       }
 
       .section-anchor { scroll-margin-top: 24px; }
+
+      /* ─── Research Box ───────────────────────── */
+      .research-box {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--navy);
+        padding: 18px 20px;
+        margin: 2em 0;
+        box-shadow: 0 1px 8px rgba(27,58,107,0.06);
+      }
+
+      .research-box .rb-label {
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--navy);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .research-box .rb-label::before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 3px;
+        background: var(--crimson);
+        border-radius: 2px;
+      }
+
+      .research-box p {
+        margin-bottom: 0.5em;
+        font-size: 0.92rem;
+        color: var(--text-mid);
+      }
     </style>
 </head>
 <body>
@@ -478,7 +523,7 @@
 <header class="masthead">
   <div class="masthead-inner">
     <a href="index.html" class="masthead-logo">
-        <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 38px; width: auto;">
+        <img src="assets/raisemark-logo.png" alt="The RaiseMark logo in deep navy bold lettering, with the lowercase i rendered in crimson including an oversized circular dot, above the tagline A Higher Standard in navy spaced capitals." width="70" height="38" fetchpriority="high">
         <span class="masthead-tagline">A Higher Standard</span>
       </a>
     <span class="masthead-section">RaiseThought</span>
@@ -528,7 +573,7 @@
 
     <!-- ARTICLE HERO IMAGE -->
     <div style="text-align: center; margin: 2rem 0;">
-      <img src="assets/confidence-scores.jpg" alt="Illustration of AI confidence scores, model scale calibration, and statistical uncertainty in K-12 education" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <img src="assets/confidence-scores.jpg" alt="Illustration of AI confidence scores, model scale calibration, and statistical uncertainty in K-12 education" width="1376" height="768" fetchpriority="high" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     </div>
 
     <!-- PULLQUOTE -->
@@ -538,7 +583,7 @@
 
     <!-- ROADBLOCK SECTION -->
     <section id="roadblock" class="section-anchor">
-      <p>School administrators are increasingly adopting LLM-based chat systems to streamline district operations and classroom planning, but they face a critical roadblock. A significant deficiency of LLM-based chat systems compared to traditional ways of browsing the Internet is the lack of trust indicators or human verification. Without clear signals of reliability, education leaders are left guessing whether the AI's output is factually grounded or confidently incorrect. Making matters worse, as RaiseMark has previously pointed out, LLMs tend to figure out what the user wants to hear and justify it.</p>
+      <p>School administrators are increasingly adopting LLM-based chat systems to streamline district operations and classroom planning, but they face a critical roadblock. A significant deficiency of LLM-based chat systems compared to traditional ways of browsing the Internet is the lack of trust indicators or human verification. Without clear signals of reliability, education leaders are left guessing whether the AI's output is factually grounded or confidently incorrect. Making matters worse, as RaiseMark has previously documented in our analysis of <a href="article-echo-chamber.html">LLM sycophancy</a>, language models systematically tell users what they want to hear.</p>
     </section>
 
     <!-- SIMPLE FIX SECTION -->
@@ -605,8 +650,19 @@
     <section id="district-takeaway" class="section-anchor">
       <h2>What District Leaders Must Ask Next</h2>
       <p>As your district evaluates new AI tools, are you simply accepting the generative outputs at face value, or are you demanding that the system quantify its own certainty before it reaches your staff? If so, is that self-assessment reliable?</p>
-      <p>After all, the only thing worse than no reliability assessment by the LLM is high confidence regarding an erroneous output. The Yang paper suggests it is worth knowing what that background reliability prompt requires because these details matter.</p>
+      <p>After all, the only thing worse than no reliability assessment by the LLM is high confidence regarding an erroneous output. As demonstrated in our research on <a href="article-lying-mirror.html">AI cognitive biases and metacognitive failure</a>, uncalibrated models actively reinforce flawed reasoning. The Yang paper suggests it is worth knowing what that background reliability prompt requires because these details matter. For districts evaluating classroom AI prompts and deployment guidelines, our <a href="policy-check-up.html">Policy Check-Up</a> provides immediate policy alignment.</p>
     </section>
+
+    <!-- RELATED RESEARCH & DISTRICT GOVERNANCE -->
+    <div class="research-box">
+      <div class="rb-label">Related Research &amp; District Governance</div>
+      <p>Explore related briefings on model reliability, cognitive biases, and administrative safeguards:</p>
+      <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem; line-height: 1.6;">
+        <li><a href="article-echo-chamber.html"><strong>The Echo Chamber: LLM Sycophancy &amp; Flawed Verification</strong></a> &mdash; How frontier models validate incorrect user assumptions rather than challenging errors.</li>
+        <li><a href="article-lying-mirror.html"><strong>The Lying Mirror: AI Cognitive Biases &amp; Metacognition</strong></a> &mdash; Examining systemic blind spots when AI evaluates its own accuracy.</li>
+        <li><a href="ai-readiness-scorecard.html"><strong>AI Readiness Scorecard ($4,500)</strong></a> &mdash; 125-point comprehensive institutional audit evaluating model verification and policy safeguards.</li>
+      </ul>
+    </div>
 
     <span class="methodology-tag">RaiseThought &middot; July 2026</span>
 
