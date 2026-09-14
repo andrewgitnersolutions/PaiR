@@ -38,7 +38,7 @@ if [ ! -f "CNAME" ] || [ "$(cat CNAME | tr -d '[:space:]')" != "raisemarkai.com"
 fi
 
 # Check navigation bar consistency across main pages
-NAV_PAGES=("index.html" "about.html" "team.html" "method.html" "ai-readiness-scorecard.html" "ai-policy-tracker.html" "policy-check-up.html" "articles.html" "contact.html")
+NAV_PAGES=("index.html" "about.html" "team.html" "method.html" "ai-360-review.html" "ai-policy-tracker.html" "policy-check-up.html" "articles.html" "contact.html")
 echo "Verifying navigation blocks across core pages..."
 for p in "${NAV_PAGES[@]}"; do
     if [ -f "$p" ]; then

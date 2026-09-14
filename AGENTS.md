@@ -83,7 +83,7 @@ Whenever a navigation item is added, modified, or removed:
 2. **No build step, framework, or bundler:** No React, Vue, Next, Vite, Tailwind, or npm build dependencies. Pure HTML5, CSS3, and vanilla ES6 JS.
 3. **No auto-generated 50-state tracker pages:** Tracker remains consolidated on `ai-policy-tracker.html`. Never auto-generate statutory compliance pages.
 4. **No client names, logos, testimonials, or case studies:** Client work is subject to written approval that does not exist. Keep all proof points and references strictly de-identified.
-5. **No unapproved pricing:** The only public price cleared for the site is **$4,500 for the AI Readiness Scorecard**. Never publish hourly rates, internal tiers, or retainer fees.
+5. **No unapproved pricing:** No public pricing is cleared for the live site. Never publish hourly rates, internal tiers, or retainer fees without explicit principal clearance.
 6. **No invented or altered statistics:** Original data points from the RaiseMark tool library are verbatim-locked.
 7. **No renaming repository or modifying `CNAME` / `robots.txt` / URLs.**
 
@@ -91,7 +91,7 @@ Whenever a navigation item is added, modified, or removed:
 
 ## 6. Safety Gates
 
-- **Gate 1 (Pricing):** Only $4,500 Scorecard authorized.
+- **Gate 1 (Pricing):** Public pricing requires explicit principal clearance. Entry engagement is the AI 360 Review.
 - **Gate 2 (Articles):** Clearance required before publishing draft documents.
 - **Gate 3 (Methodology):** Naming confirmation required before public rollout.
 

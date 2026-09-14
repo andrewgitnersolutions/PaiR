@@ -28,7 +28,7 @@ website/
 ├── about.html                  # Mission, vision, and company background
 ├── team.html                   # Team profiles and bio cards
 ├── method.html                 # Proprietary Method (Compass, Map, Path)
-├── ai-readiness-scorecard.html # AI Readiness Scorecard diagnostic ($4,500)
+├── ai-360-review.html          # AI 360 Review diagnostic (Compass Stage)
 ├── articles.html               # Article directory and resource hub
 ├── article-*.html              # Individual research briefings and articles
 ├── policy-check-up.html        # Interactive K-12 AI Policy Check-Up tool
@@ -139,7 +139,7 @@ Using a local HTTP server ensures absolute paths, relative links, and asset fetc
                    <li><a href="about.html" class="nav-link">About</a></li>
                    <li><a href="team.html" class="nav-link">Team</a></li>
                    <li><a href="method.html" class="nav-link">Method</a></li>
-                   <li><a href="ai-readiness-scorecard.html" class="nav-link">Scorecard</a></li>
+                   <li><a href="ai-360-review.html" class="nav-link">360 Review</a></li>
                    <li><a href="articles.html" class="nav-link">Articles</a></li>
                    <li><a href="new-page.html" class="nav-link active">New Page</a></li>
                    <li><a href="policy-check-up.html" class="nav-link">Policy Check-Up</a></li>
