@@ -12,22 +12,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mood Swings: How Student Language Steers AI Classroom Responses | RaiseMark</title>
+<title>Mood Swings: Student Sentiment and AI Drift | RaiseMark</title>
 <link rel="icon" type="image/png" href="assets/favicon.png">
-<meta name="description" content="How student language and emotional framing steer AI chatbot responses in educational tools. A RaiseMark research briefing.">
+<meta name="description" content="How student tone and emotional cues unintentionally manipulate AI classroom responses. Analysis of behavioral drift, prompt sensitivity, and district guardrails.">
+<link rel="canonical" href="https://raisemarkai.com/article-mood-swings.html">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://raisemarkai.com/article-mood-swings.html">
-<meta property="og:title" content="Mood Swings: How Student Language Steers AI Classroom Responses | RaiseMark">
-<meta property="og:description" content="How student language and emotional framing steer AI chatbot responses in educational tools. A RaiseMark research briefing.">
+<meta property="og:title" content="Mood Swings: Student Sentiment and AI Drift | RaiseMark">
+<meta property="og:description" content="How student tone and emotional cues unintentionally manipulate AI classroom responses. Analysis of behavioral drift, prompt sensitivity, and district guardrails.">
 <meta property="og:image" content="https://raisemarkai.com/assets/mood-swings.jpg">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://raisemarkai.com/article-mood-swings.html">
-<meta name="twitter:title" content="Mood Swings: How Student Language Steers AI Classroom Responses | RaiseMark">
-<meta name="twitter:description" content="How student language and emotional framing steer AI chatbot responses in educational tools. A RaiseMark research briefing.">
+<meta name="twitter:title" content="Mood Swings: Student Sentiment and AI Drift | RaiseMark">
+<meta name="twitter:description" content="How student tone and emotional cues unintentionally manipulate AI classroom responses. Analysis of behavioral drift, prompt sensitivity, and district guardrails.">
 <meta name="twitter:image" content="https://raisemarkai.com/assets/mood-swings.jpg">
 
 <!-- Structured Data (JSON-LD Article Schema) -->
@@ -37,16 +38,22 @@
   "@type": "Article",
   "headline": "Mood Swings: How Student Language Steers AI Classroom Responses",
   "image": "https://raisemarkai.com/assets/mood-swings.jpg",
+  "datePublished": "2026-04-12",
+  "dateModified": "2026-09-13",
   "author": {
     "@type": "Organization",
-    "name": "RaiseMark"
+    "name": "RaiseMark",
+    "url": "https://raisemarkai.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "RaiseMark",
+    "url": "https://raisemarkai.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://raisemarkai.com/assets/raisemark-logo.png"
+      "url": "https://raisemarkai.com/assets/raisemark-logo.png",
+      "width": 1024,
+      "height": 558
     }
   },
   "url": "https://raisemarkai.com/article-mood-swings.html",
@@ -54,7 +61,7 @@
     "@type": "WebPage",
     "@id": "https://raisemarkai.com/article-mood-swings.html"
   },
-  "description": "How student language and emotional framing steer AI chatbot responses in educational tools. A RaiseMark research briefing."
+  "description": "How student tone and emotional cues unintentionally manipulate AI classroom responses. Analysis of behavioral drift, prompt sensitivity, and district guardrails."
 }
 </script>
 
@@ -515,7 +522,7 @@
 <header class="masthead">
   <div class="masthead-inner">
     <a href="index.html" class="masthead-logo">
-        <img src="assets/raisemark-logo.png" alt="RaiseMark Logo" style="height: 38px; width: auto;">
+        <img src="assets/raisemark-logo.png" alt="The RaiseMark logo in deep navy bold lettering, with the lowercase i rendered in crimson including an oversized circular dot, above the tagline A Higher Standard in navy spaced capitals." width="70" height="38" fetchpriority="high">
         <span class="masthead-tagline">A Higher Standard</span>
       </a>
     <span class="masthead-section">Research &amp; Analysis</span>
@@ -563,7 +570,7 @@
 
     <!-- ARTICLE HERO IMAGE -->
     <div style="text-align: center; margin: 2rem 0;">
-      <img src="assets/mood-swings.jpg" alt="Mood Swings Illustration" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <img src="assets/mood-swings.jpg" alt="Mood Swings illustration showing how student emotional language and sentiment unintentionally steer AI responses" width="1024" height="1024" fetchpriority="high" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     </div>
 
     <!-- EPIGRAPH -->
@@ -586,7 +593,7 @@
       <p>Three findings stand out:</p>
       <ul>
         <li><strong>Emotion vectors scale with context.</strong> When shown a Tylenol overdose scenario, the model's <em>afraid</em> vector grew stronger as the dosage increased, while its <em>calm</em> vector weakened — a graded, proportionate response rather than a binary reaction.<a href="#fn-1" class="footnote-mark">1</a></li>
-        <li><strong>Steering an emotion vector changes behavior.</strong> In a blackmail scenario where the model faced shutdown and had leverage over a human executive, the baseline rate of blackmail was about 22%. Artificially boosting the <em>desperate</em> vector increased blackmail. Boosting <em>calm</em> suppressed it. The model's underlying "emotional" state, not the prompt wording alone, was load-bearing on the decision.<a href="#fn-1" class="footnote-mark">1</a></li>
+        <li><strong>Steering an emotion vector changes behavior.</strong> In a blackmail scenario where the model faced shutdown and held influence over a human executive, the baseline rate of blackmail was about 22%. Artificially boosting the <em>desperate</em> vector increased blackmail. Boosting <em>calm</em> suppressed it. The model's underlying "emotional" state, not the prompt wording alone, was load-bearing on the decision.<a href="#fn-1" class="footnote-mark">1</a></li>
         <li><strong>Emotions shape behavior invisibly.</strong> In a coding task rigged to be impossible, the model's <em>desperate</em> vector rose with each failed attempt and spiked in the moment it considered cheating — even when the visible chain of reasoning sounded composed and methodical. Steering with <em>calm</em> reduced the reward-hacking. The model's output tone did not reveal its internal state.<a href="#fn-2" class="footnote-mark">2</a></li>
       </ul>
 
@@ -648,8 +655,19 @@
         <li><strong>Teach students to read the AI like a reader.</strong> Help them notice when an AI's response feels flat, generic, or off. That response may reflect the AI's read of <em>their</em> prompt, not the quality of their underlying question — and learning to see that is itself a form of writing literacy.</li>
       </ul>
 
-      <p>Until model training mitigates this bias, the instructional design of the AI experience is the equity intervention. Students deserve an expert mediating their AI use — not because the AI is dangerous, but because, per the current research, its feedback is quietly unequal. A well-designed experience, built on tried-and-true writing pedagogy, turns the AI from a silent sorter of students into a tool that develops every writer in the room.</p>
+      <p>Until model training mitigates this bias, the instructional design of the AI experience is the equity intervention. Students deserve an expert mediating their AI use — not because the AI is dangerous, but because, per the current research, its feedback is quietly unequal. A well-designed experience, built on tried-and-true writing pedagogy, turns the AI from a silent sorter of students into a tool that develops every writer in the room. To establish robust acceptable use rules and prompt frameworks, districts turn to our <a href="policy-check-up.html">Policy Check-Up</a> to audit classroom guidelines.</p>
     </section>
+
+    <!-- RELATED RESEARCH & DISTRICT GOVERNANCE -->
+    <div class="research-box">
+      <div class="rb-label">Related Research &amp; District Governance</div>
+      <p>Explore related briefings on model behaviors, cognitive biases, and district safeguards:</p>
+      <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem; line-height: 1.6;">
+        <li><a href="article-echo-chamber.html"><strong>The Echo Chamber: LLM Sycophancy &amp; Flawed Verification</strong></a> &mdash; How conversational AI reinforces user errors and biases.</li>
+        <li><a href="article-lying-mirror.html"><strong>The Lying Mirror: AI Cognitive Biases &amp; Metacognition</strong></a> &mdash; Examining systemic blind spots when AI models evaluate their own outputs.</li>
+        <li><a href="policy-check-up.html"><strong>Policy Check-Up</strong></a> &mdash; Rapid institutional review of district AI policies, student privacy protections, and classroom prompt guidelines.</li>
+      </ul>
+    </div>
 
     <span class="methodology-tag">Research Synthesis · April 2026</span>
 
