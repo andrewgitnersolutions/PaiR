@@ -14,7 +14,7 @@ echo "🚀 RaiseMark Production Deployment Pipeline"
 echo "========================================================"
 
 # 1. Check working directory status
-if ! git diff-index --quiet HEAD --; then
+if [ -n "$(git status --porcelain)" ]; then
     echo "⚠️  Working directory has uncommitted changes."
     echo "Please commit or stash your changes on staging before publishing to production."
     git status -s
