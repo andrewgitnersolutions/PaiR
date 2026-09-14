@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL8Q68XWCF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZL8Q68XWCF');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Scorecard for K-12 Districts ($4,500) | RaiseMark</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="description"
+        content="A structured, evidence-based diagnostic evaluating K-12 school district AI readiness across 5 institutional dimensions, 125 points, and 4 actionable tiers. Fixed-price $4,500 assessment.">
+    <link rel="canonical" href="https://raisemarkai.com/ai-readiness-scorecard.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raisemarkai.com/ai-readiness-scorecard.html">
+    <meta property="og:title" content="AI Readiness Scorecard for K-12 Districts ($4,500) | RaiseMark">
+    <meta property="og:description"
+        content="A structured, evidence-based diagnostic evaluating K-12 school district AI readiness across 5 institutional dimensions, 125 points, and 4 actionable tiers. Fixed-price $4,500 assessment.">
+    <meta property="og:image" content="https://raisemarkai.com/assets/raisemark-logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://raisemarkai.com/ai-readiness-scorecard.html">
+    <meta name="twitter:title" content="AI Readiness Scorecard for K-12 Districts ($4,500) | RaiseMark">
+    <meta name="twitter:description"
+        content="A structured, evidence-based diagnostic evaluating K-12 school district AI readiness across 5 institutional dimensions, 125 points, and 4 actionable tiers. Fixed-price $4,500 assessment.">
+    <meta name="twitter:image" content="https://raisemarkai.com/assets/raisemark-logo.png">
+
+    <!-- JSON-LD Structured Data (Service Schema nested in ProfessionalService) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://raisemarkai.com/#organization",
+          "name": "RaiseMark",
+          "url": "https://raisemarkai.com",
+          "logo": "https://raisemarkai.com/assets/raisemark-logo.png",
+          "description": "Evidence-based AI readiness audits, policy development, and advisory services for K-12 school districts."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://raisemarkai.com/ai-readiness-scorecard.html#service",
+          "name": "K-12 AI Readiness Scorecard",
+          "serviceType": "Educational AI Readiness Diagnostic",
+          "description": "A structured, evidence-based diagnostic evaluating school district AI maturity across five institutional dimensions, 125 evaluation points, and four non-numeric progression tiers.",
+          "provider": {
+            "@id": "https://raisemarkai.com/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "4500",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://raisemarkai.com/ai-readiness-scorecard.html",
+            "validFrom": "2026-09-01"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+      /* Scorecard Scoped Styles (Preserving Design Tokens) */
+      .scorecard-badge {
+        display: inline-block;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--crimson);
+        background: var(--crimson-light);
+        padding: 0.35rem 0.85rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        line-height: 1.4;
+      }
+
+      .price-banner {
+        background: var(--white);
+        border: 2px solid var(--border);
+        border-top: 4px solid var(--navy);
+        border-radius: 6px;
+        padding: 1.75rem 2rem;
+        margin: 1.75rem 0 1.5rem;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .price-banner__figures {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+      }
+
+      .price-banner__amount {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--navy);
+        line-height: 1;
+        font-family: var(--font-heading);
+      }
+
+      .price-banner__sub {
+        font-size: 0.9375rem;
+        color: var(--text-body);
+        font-weight: 500;
+      }
+
+      .price-banner__meta {
+        font-size: 0.875rem;
+        color: var(--text-body);
+        line-height: 1.45;
+        max-width: 420px;
+      }
+
+      .price-banner__meta strong {
+        color: var(--navy);
+      }
+
+      .price-banner__action {
+        flex-shrink: 0;
+      }
+
+      /* Dimension Cards */
+      .dimension-number {
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--crimson);
+        margin-bottom: 0.4rem;
+      }
+
+      .dimension-pts {
+        display: inline-block;
+        background: var(--light-grey);
+        color: var(--navy);
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+      }
+
+      /* Tier Matrix */
+      .tier-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .tier-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 1.75rem 1.5rem;
+        transition: transform var(--ease), box-shadow var(--ease);
+      }
+
+      .tier-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .tier-card__header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .tier-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .tier-indicator--1 { background: #E28743; }
+      .tier-indicator--2 { background: #EAB308; }
+      .tier-indicator--3 { background: #3B82F6; }
+      .tier-indicator--4 { background: #10B981; }
+
+      .tier-name {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin: 0;
+      }
+
+      .tier-card p {
+        font-size: 0.9375rem;
+        line-height: 1.55;
+        color: var(--text-body);
+        margin-bottom: 0.75rem;
+      }
+
+      .tier-focus {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--navy-mid);
+        border-top: 1px solid var(--light-grey);
+        padding-top: 0.6rem;
+      }
+
+      /* Process Strip */
+      .process-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 1rem;
+        margin: 2.5rem 0 1.5rem;
+      }
+
+      .process-step {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 1.25rem 1rem;
+        position: relative;
+      }
+
+      .process-step__num {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--crimson);
+        margin-bottom: 0.35rem;
+      }
+
+      .process-step__title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.4rem;
+      }
+
+      .process-step__desc {
+        font-size: 0.85rem;
+        line-height: 1.45;
+        color: var(--text-body);
+        margin: 0;
+      }
+
+      /* Callout Box */
+      .disclaimer-box {
+        background: var(--near-white);
+        border-left: 3px solid var(--navy-mid);
+        padding: 1.25rem 1.5rem;
+        border-radius: 0 4px 4px 0;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        color: var(--text-dark);
+        margin-top: 2rem;
+      }
+
+      .disclaimer-box strong {
+        color: var(--navy);
+      }
+
+      /* Deliverables Checklist */
+      .deliverables-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+      }
+
+      .deliverables-item {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 1.25rem;
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+      }
+
+      .deliverables-icon {
+        color: var(--navy);
+        font-size: 1.25rem;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .deliverables-item h4 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1rem;
+        color: var(--navy);
+      }
+
+      .deliverables-item p {
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--text-body);
+        line-height: 1.45;
+      }
+
+      @media (max-width: 768px) {
+        .price-banner {
+          padding: 1.25rem 1.25rem;
+          margin: 1.25rem 0;
+        }
+        .price-banner__amount {
+          font-size: 2.25rem;
+        }
+        .price-banner__action {
+          width: 100%;
+        }
+        .price-banner__action .btn {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .scorecard-badge {
+          font-size: 0.75rem;
+          letter-spacing: 0.05em;
+          padding: 0.3rem 0.6rem;
+        }
+        h1 {
+          font-size: 1.85rem;
+        }
+      }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/raisemark-logo.png"
+                    alt="The RaiseMark logo in deep navy bold lettering, with the lowercase i rendered in crimson including an oversized circular dot, above the tagline A Higher Standard in navy spaced capitals."
+                    style="height: 48px; width: auto;">
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="ai-readiness-scorecard.html" class="nav-link active">Scorecard</a></li>
+                    <li><a href="ai-policy-tracker.html" class="nav-link">50-State Tracker</a></li>
+                    <li><a href="policy-check-up.html" class="nav-link">Policy Check-Up</a></li>
+                    <li><a href="articles.html" class="nav-link">Articles</a></li>
+                    <li><a href="contact.html" class="btn btn--primary btn--sm">Work With Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Hero with Visible Price Above the Fold -->
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <div class="hero__inner" style="max-width: 860px; margin: 0 auto; text-align: left;">
+                    <span class="scorecard-badge">Fixed-Price Diagnostic · K-12 Leadership</span>
+                    <h1 style="margin-bottom: 0.75rem;">AI Readiness Scorecard</h1>
+                    <p style="font-size: 1.125rem; line-height: 1.6; margin-bottom: 0.5rem; color: var(--text-dark);">
+                        An evidence-based diagnostic evaluating district AI maturity across five institutional dimensions, producing a concrete 90-day roadmap before major capital or policy commitments.
+                    </p>
+
+                    <!-- Prominent Pricing Block Visible Without Scrolling -->
+                    <div class="price-banner">
+                        <div>
+                            <div class="price-banner__figures">
+                                <span class="price-banner__amount">$4,500</span>
+                                <span class="price-banner__sub">Fixed Scope · Flat Rate</span>
+                            </div>
+                            <div class="price-banner__meta" style="margin-top: 0.4rem;">
+                                Sits within typical superintendent discretionary signing authority &mdash; <strong>no school board vote required</strong>. Rapid 2&ndash;3 week turnaround.
+                            </div>
+                        </div>
+                        <div class="price-banner__action">
+                            <a href="contact.html" class="btn btn--primary">Request a scorecard assessment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What It Measures: 5 Dimensions (125 Total Points) -->
+        <section class="section" id="dimensions" style="padding-top: 2rem;">
+            <div class="container">
+                <div class="section-header" style="text-align: left; max-width: 860px; margin: 0 auto 2.5rem;">
+                    <h2>What It Measures: Five Evaluated Dimensions</h2>
+                    <p style="font-size: 1.05rem; color: var(--text-body); margin-bottom: 0;">
+                        RaiseMark evaluates district readiness across 125 structured assessment points (25 points per dimension). Each dimension addresses a concrete operational area where unmanaged AI introduces student privacy exposure or institutional friction.
+                    </p>
+                </div>
+
+                <div class="card-grid" style="max-width: 1040px; margin: 0 auto;">
+                    <!-- Dimension 1 -->
+                    <div class="card card--navy">
+                        <div class="dimension-number">Dimension 01 <span class="dimension-pts">25 Points</span></div>
+                        <h3>Strategy &amp; Leadership</h3>
+                        <p>Evaluates institutional vision, cabinet-level sponsorship, cross-functional oversight, board communication readiness, and the ethical principles directing district AI adoption.</p>
+                    </div>
+
+                    <!-- Dimension 2 -->
+                    <div class="card card--crimson">
+                        <div class="dimension-number">Dimension 02 <span class="dimension-pts">25 Points</span></div>
+                        <h3>Infrastructure &amp; Technology</h3>
+                        <p>Reviews enterprise architecture, network filtering resilience against consumer AI endpoints, single sign-on (SSO) identity enforcement, device parity, and vendor API security.</p>
+                    </div>
+
+                    <!-- Dimension 3 -->
+                    <div class="card card--navy">
+                        <div class="dimension-number">Dimension 03 <span class="dimension-pts">25 Points</span></div>
+                        <h3>Procurement &amp; Financial Management</h3>
+                        <p>Audits software intake protocols, vetting workflows for ungoverned "free-tier" tools, student data-sharing clauses, software lifecycle management, and total cost of ownership.</p>
+                    </div>
+
+                    <!-- Dimension 4 -->
+                    <div class="card card--crimson">
+                        <div class="dimension-number">Dimension 04 <span class="dimension-pts">25 Points</span></div>
+                        <h3>Data Governance &amp; Privacy</h3>
+                        <p>Examines FERPA, COPPA, and state statutory compliance, AI model training opt-outs on student work, directory information protections, and third-party vendor audit mechanisms.</p>
+                    </div>
+
+                    <!-- Dimension 5 -->
+                    <div class="card card--navy">
+                        <div class="dimension-number">Dimension 05 <span class="dimension-pts">25 Points</span></div>
+                        <h3>Curriculum, Instruction &amp; Staff Capacity</h3>
+                        <p>Assesses educator AI literacy, pedagogical integration frameworks, academic integrity guidance, human-in-the-loop validation, and differentiated professional development pipelines.</p>
+                    </div>
+                </div>
+
+                <div style="max-width: 1040px; margin: 2rem auto 0;">
+                    <div class="disclaimer-box">
+                        <strong>Framework Grounding &amp; Independent Scope:</strong> RaiseMark diagnostics are benchmarked against publicly available institutional standards and published educator competency frameworks (including CoSN maturity dimensions and UNESCO K-12 AI competencies). RaiseMark is an independent educational advisory firm; we do not claim third-party certification, trade association accreditation, or institutional endorsement. Diagnostic findings and policy recommendations do not constitute legal advice.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Receive -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section-header" style="text-align: left; max-width: 860px; margin: 0 auto 2rem;">
+                    <h2>What You Receive</h2>
+                    <p style="font-size: 1.05rem; color: var(--text-body);">
+                        Rather than delivering an abstract theoretical document, the Scorecard produces tangible, executive-level artifacts built specifically for superintendent cabinets and school boards.
+                    </p>
+                </div>
+
+                <div style="max-width: 1040px; margin: 0 auto;">
+                    <ul class="deliverables-list">
+                        <li class="deliverables-item">
+                            <span class="deliverables-icon" aria-hidden="true">&#9670;</span>
+                            <div>
+                                <h4>Readiness Index (125 Evaluation Points)</h4>
+                                <p>A structured diagnostic ledger across all five operational dimensions, identifying exactly where district capabilities stand and where hidden liabilities concentrate.</p>
+                            </div>
+                        </li>
+                        <li class="deliverables-item">
+                            <span class="deliverables-icon" aria-hidden="true">&#9670;</span>
+                            <div>
+                                <h4>Qualitative Tier Placement</h4>
+                                <p>Clear placement into one of four institutional tiers. We report developmental tiers rather than raw numbers to prevent the defensive reactions associated with punitive grades.</p>
+                            </div>
+                        </li>
+                        <li class="deliverables-item">
+                            <span class="deliverables-icon" aria-hidden="true">&#9670;</span>
+                            <div>
+                                <h4>Prioritized 90-Day Focus List</h4>
+                                <p>A sequenced, practical action plan identifying the top high-impact policy, technical, and professional learning priorities for your team to address immediately.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- The Four Progression Tiers -->
+                    <div style="margin-top: 3rem;">
+                        <h3 style="color: var(--navy); margin-bottom: 0.5rem;">The Four Progression Tiers</h3>
+                        <p style="font-size: 0.9375rem; color: var(--text-body); max-width: 800px; margin-bottom: 1.5rem;">
+                            Districts read numeric maturity scores as failing grades. RaiseMark deliberately reports qualitative progression tiers, providing school boards and leadership teams with an objective roadmap for growth without organizational defensiveness.
+                        </p>
+
+                        <div class="tier-grid">
+                            <div class="tier-card">
+                                <div class="tier-card__header">
+                                    <span class="tier-indicator tier-indicator--1" aria-hidden="true"></span>
+                                    <h4 class="tier-name">Foundational</h4>
+                                </div>
+                                <p>Ad-hoc staff exploration, unvetted consumer app use on student devices, and absence of standardized board policy or procurement safeguards.</p>
+                                <div class="tier-focus">Focus: Rapid risk containment &amp; baseline acceptable use.</div>
+                            </div>
+
+                            <div class="tier-card">
+                                <div class="tier-card__header">
+                                    <span class="tier-indicator tier-indicator--2" aria-hidden="true"></span>
+                                    <h4 class="tier-name">Developing</h4>
+                                </div>
+                                <p>Initial policy guidelines issued, early pilot software programs under review, and emerging awareness of student privacy risks among staff.</p>
+                                <div class="tier-focus">Focus: Formalizing vendor intake &amp; security gates.</div>
+                            </div>
+
+                            <div class="tier-card">
+                                <div class="tier-card__header">
+                                    <span class="tier-indicator tier-indicator--3" aria-hidden="true"></span>
+                                    <h4 class="tier-name">Maturing</h4>
+                                </div>
+                                <p>Systemic data governance workflows, board-approved AUP with grade-band guidance, and structured educator training pathways in place.</p>
+                                <div class="tier-focus">Focus: Pedagogical integration &amp; stack monitoring.</div>
+                            </div>
+
+                            <div class="tier-card">
+                                <div class="tier-card__header">
+                                    <span class="tier-indicator tier-indicator--4" aria-hidden="true"></span>
+                                    <h4 class="tier-name">Mature</h4>
+                                </div>
+                                <p>Continuous ecosystem surveillance, embedded instructional evaluation, active vendor compliance verification, and institutional leadership.</p>
+                                <div class="tier-focus">Focus: Sustained excellence &amp; regional mentoring.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works: 5-Step Process Strip -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header" style="text-align: left; max-width: 860px; margin: 0 auto 1.5rem;">
+                    <h2>How the Engagement Works</h2>
+                    <p style="font-size: 1.05rem; color: var(--text-body); margin-bottom: 0;">
+                        A lean, non-disruptive process structured to respect district leadership time and deliver actionable answers quickly.
+                    </p>
+                </div>
+
+                <div style="max-width: 1040px; margin: 0 auto;">
+                    <div class="process-strip">
+                        <div class="process-step">
+                            <div class="process-step__num">Step 01</div>
+                            <div class="process-step__title">Confirm Scope</div>
+                            <p class="process-step__desc">A 30-minute intake call to map district scale, tech stack footprint, and leadership stakeholders.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__num">Step 02</div>
+                            <div class="process-step__title">Formalize</div>
+                            <p class="process-step__desc">Simple, one-page engagement letter. Flat $4,500 fee with zero hidden travel or administrative costs.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__num">Step 03</div>
+                            <div class="process-step__title">Kickoff</div>
+                            <p class="process-step__desc">Virtual cabinet briefing to align timelines, data expectations, and project milestones.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__num">Step 04</div>
+                            <div class="process-step__title">Active Phase</div>
+                            <p class="process-step__desc">Independent review of district policies, software agreements, and technological infrastructure.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step__num">Step 05</div>
+                            <div class="process-step__title">Delivery</div>
+                            <p class="process-step__desc">Executive briefing presentation, complete written diagnostic report, and 90-day tactical roadmap.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 2rem;">
+                        <div class="card card--navy" style="padding: 1.5rem 1.5rem 1.5rem 2rem;">
+                            <h4 style="margin-bottom: 0.35rem; color: var(--navy);">Virtual-First Efficiency</h4>
+                            <p style="font-size: 0.9375rem; color: var(--text-body);">Zero travel overhead, zero schedule friction. Conducted entirely through structured digital interviews and document intake.</p>
+                        </div>
+                        <div class="card card--navy" style="padding: 1.5rem 1.5rem 1.5rem 2rem;">
+                            <h4 style="margin-bottom: 0.35rem; color: var(--navy);">Dedicated Principal Lead</h4>
+                            <p style="font-size: 0.9375rem; color: var(--text-body);">You work directly with a senior RaiseMark partner throughout the engagement, ensuring seasoned leadership perspective.</p>
+                        </div>
+                        <div class="card card--navy" style="padding: 1.5rem 1.5rem 1.5rem 2rem;">
+                            <h4 style="margin-bottom: 0.35rem; color: var(--navy);">100% District Ownership</h4>
+                            <p style="font-size: 0.9375rem; color: var(--text-body);">Every score sheet, diagnostic rubric, and strategic document produced is entirely your district's property to keep and adapt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Banner -->
+        <section class="section section--alt" style="padding: 4rem 0;">
+            <div class="container">
+                <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+                    <span class="scorecard-badge">Get Started</span>
+                    <h2 style="margin-bottom: 0.75rem;">Establish Your District's Baseline Before Scaling AI</h2>
+                    <p style="font-size: 1.125rem; color: var(--text-body); margin-bottom: 1.75rem; line-height: 1.6;">
+                        A fixed-price $4,500 diagnostic delivering clarity to your cabinet and confidence to your school board within three weeks.
+                    </p>
+                    <a href="contact.html" class="btn btn--primary" style="padding: 0.85rem 2.25rem; font-size: 1rem;">Request a scorecard assessment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/raisemark-logo.png"
+                    alt="The RaiseMark logo in deep navy bold lettering, with the lowercase i rendered in crimson including an oversized circular dot, above the tagline A Higher Standard in navy spaced capitals."
+                    style="height: 48px; width: auto;">
+            </a>
+            <p>A Higher Standard</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="team.html">Team</a>
+                <a href="services.html">Services</a>
+                <a href="ai-readiness-scorecard.html">Scorecard</a>
+                <a href="articles.html">Articles</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 RaiseMark &mdash; A Higher Standard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
