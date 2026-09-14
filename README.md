@@ -27,7 +27,8 @@ website/
 ├── index.html                  # Homepage
 ├── about.html                  # Mission, vision, and company background
 ├── team.html                   # Team profiles and bio cards
-├── services.html               # Service offerings (Audits, AUPs, Workshops)
+├── method.html                 # Proprietary Method (Compass, Map, Path)
+├── ai-readiness-scorecard.html # AI Readiness Scorecard diagnostic ($4,500)
 ├── articles.html               # Article directory and resource hub
 ├── article-*.html              # Individual research briefings and articles
 ├── policy-check-up.html        # Interactive K-12 AI Policy Check-Up tool
@@ -137,7 +138,8 @@ Using a local HTTP server ensures absolute paths, relative links, and asset fetc
                <ul class="nav-links" id="nav-links">
                    <li><a href="about.html" class="nav-link">About</a></li>
                    <li><a href="team.html" class="nav-link">Team</a></li>
-                   <li><a href="services.html" class="nav-link">Services</a></li>
+                   <li><a href="method.html" class="nav-link">Method</a></li>
+                   <li><a href="ai-readiness-scorecard.html" class="nav-link">Scorecard</a></li>
                    <li><a href="articles.html" class="nav-link">Articles</a></li>
                    <li><a href="new-page.html" class="nav-link active">New Page</a></li>
                    <li><a href="policy-check-up.html" class="nav-link">Policy Check-Up</a></li>
@@ -152,7 +154,7 @@ Using a local HTTP server ensures absolute paths, relative links, and asset fetc
    ```
 
 2. **Sync Navigation Across All Pages**:
-   Update the `<ul class="nav-links">` list across all existing HTML files (`index.html`, `about.html`, `team.html`, `services.html`, `articles.html`, `contact.html`, etc.) so the header menu remains identical site-wide.
+   Update the `<ul class="nav-links">` list across all existing HTML files (`index.html`, `about.html`, `team.html`, `method.html`, `articles.html`, `contact.html`, etc.) so the header menu remains identical site-wide.
 
 3. **Add to `sitemap.xml`**:
    Add the new URL to `sitemap.xml`.
